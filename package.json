@@ -47,6 +47,35 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run _test:watch --watch",
+    "dev:one": "npm run _test:wtach --watch -- --include",
+    "gen": "wireit",
+    "hl": "tree-sitter highlight",
+    "install": "node-gyp-build",
+    "parser:release": "bash ./scripts/release-unstable.sh",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js",
+    "test:all": "tree-sitter generate && tree-sitter test",
+    "test:one": "tree-sitter generate && tree-sitter test --include",
+    "_test:watch": "wireit"
+  },
+  "wireit": {
+    "gen": {
+      "command": "tree-sitter generate",
+      "files": [
+        "grammar.js"
+      ]
+    },
+    "_test:watch": {
+      "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
+      "dependencies": [
+        "gen"
+      ],
+      "files": [
+        "grammar.js",
+        "test/corpus/*.txt"
+      ]
+    }
   }
 }
