@@ -1,0 +1,39 @@
+{
+  "name": "gh-actions-expression",
+  "version": "0.0.0",
+  "description": "Github Actions expressions grammar for tree-sitter",
+  "repository": "https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions",
+  "license": "MIT",
+  "author": {
+    "name": "Héctor Ochoa",
+    "email": "hector.ochoa.dev@gmail.com"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "packageManager": "npm@10.9.0",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "gh-actions-expressions"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "2.29.5",
+    "@svitejs/changesets-changelog-github-compact": "1.2.0",
+    "tree-sitter-cli": "0.25.6",
+    "wireit": "0.14.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

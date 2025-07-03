@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "gh_actions_expressions",
+      "camelcase": "GhActionsExpressions",
+      "title": "GhActionsExpressions",
+      "scope": "source.gh_actions_expressions",
+      "file-types": [
+        "null"
+      ],
+      "injection-regex": "^gh_actions_expressions$",
+      "class-name": "TreeSitterGhActionsExpressions"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.0",
+    "license": "MIT",
+    "description": "Github Actions expressions grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Héctor Ochoa",
+        "email": "hector.ochoa.dev@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
