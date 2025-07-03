@@ -47,3 +47,9 @@ zig-out/
 *.tar.gz
 *.tgz
 *.zip
+
+# Wireit stuff
+.wireit
+
+# env
+.env
