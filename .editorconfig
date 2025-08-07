@@ -44,3 +44,16 @@ indent_size = 2
 
 [{alloc,array,parser}.h]
 indent_size = 2
+
+[*.sh]
+indent_style = space
+indent_size = 2
+
+[*.test]
+indent_style = space
+indent_size = 2
+
+[*.md]
+indent_style = space
+indent_size = 2
+max_line_length = 80
