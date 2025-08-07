@@ -8,3 +8,12 @@ false
 (expression
   (boolean)
   (boolean))
+
+==================
+null
+==================
+null
+---
+
+(expression
+  (null))
