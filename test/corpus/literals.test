@@ -17,3 +17,18 @@ null
 
 (expression
   (null))
+
+==================
+number
+==================
+711
+-9.2
+0xff
+-2.99e-2
+---
+
+(expression
+  (number)
+  (number)
+  (number)
+  (number))
