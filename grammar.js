@@ -11,7 +11,9 @@ module.exports = grammar({
   name: "gh_actions_expressions",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
-  }
+    source_file: ($) => repeat1(choice($.word, $.not_word)),
+
+    word: () => /\w+/,
+    not_word: () => /\W+/,
+  },
 });

@@ -10,7 +10,8 @@
         "null"
       ],
       "injection-regex": "^gh_actions_expressions$",
-      "class-name": "TreeSitterGhActionsExpressions"
+      "class-name": "TreeSitterGhActionsExpressions",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
