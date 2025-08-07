@@ -1,6 +1,6 @@
 [
   {
-    "type": "source_file",
+    "type": "expression",
     "named": true,
     "root": true,
     "fields": {},
@@ -9,22 +9,14 @@
       "required": true,
       "types": [
         {
-          "type": "not_word",
-          "named": true
-        },
-        {
-          "type": "word",
+          "type": "boolean",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "not_word",
-    "named": true
-  },
-  {
-    "type": "word",
+    "type": "boolean",
     "named": true
   }
 ]

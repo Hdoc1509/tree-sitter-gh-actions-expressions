@@ -2,29 +2,21 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "gh_actions_expressions",
   "rules": {
-    "source_file": {
+    "expression": {
       "type": "REPEAT1",
       "content": {
         "type": "CHOICE",
         "members": [
           {
             "type": "SYMBOL",
-            "name": "word"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "not_word"
+            "name": "boolean"
           }
         ]
       }
     },
-    "word": {
+    "boolean": {
       "type": "PATTERN",
-      "value": "\\w+"
-    },
-    "not_word": {
-      "type": "PATTERN",
-      "value": "\\W+"
+      "value": "true|false"
     }
   },
   "extras": [
