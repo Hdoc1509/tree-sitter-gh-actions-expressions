@@ -11,12 +11,20 @@
         {
           "type": "boolean",
           "named": true
+        },
+        {
+          "type": "null",
+          "named": true
         }
       ]
     }
   },
   {
     "type": "boolean",
+    "named": true
+  },
+  {
+    "type": "null",
     "named": true
   }
 ]

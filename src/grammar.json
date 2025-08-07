@@ -10,6 +10,10 @@
           {
             "type": "SYMBOL",
             "name": "boolean"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "null"
           }
         ]
       }
@@ -17,6 +21,10 @@
     "boolean": {
       "type": "PATTERN",
       "value": "true|false"
+    },
+    "null": {
+      "type": "PATTERN",
+      "value": "null"
     }
   },
   "extras": [

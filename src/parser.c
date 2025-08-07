@@ -7,9 +7,9 @@
 #define LANGUAGE_VERSION 14
 #define STATE_COUNT 5
 #define LARGE_STATE_COUNT 4
-#define SYMBOL_COUNT 4
+#define SYMBOL_COUNT 5
 #define ALIAS_COUNT 0
-#define TOKEN_COUNT 2
+#define TOKEN_COUNT 3
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 0
 #define MAX_ALIAS_SEQUENCE_LENGTH 2
@@ -17,13 +17,15 @@
 
 enum ts_symbol_identifiers {
   sym_boolean = 1,
-  sym_expression = 2,
-  aux_sym_expression_repeat1 = 3,
+  sym_null = 2,
+  sym_expression = 3,
+  aux_sym_expression_repeat1 = 4,
 };
 
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [sym_boolean] = "boolean",
+  [sym_null] = "null",
   [sym_expression] = "expression",
   [aux_sym_expression_repeat1] = "expression_repeat1",
 };
@@ -31,6 +33,7 @@ static const char * const ts_symbol_names[] = {
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [sym_boolean] = sym_boolean,
+  [sym_null] = sym_null,
   [sym_expression] = sym_expression,
   [aux_sym_expression_repeat1] = aux_sym_expression_repeat1,
 };
@@ -41,6 +44,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym_boolean] = {
+    .visible = true,
+    .named = true,
+  },
+  [sym_null] = {
     .visible = true,
     .named = true,
   },
@@ -75,9 +82,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
   eof = lexer->eof(lexer);
   switch (state) {
     case 0:
-      if (eof) ADVANCE(7);
+      if (eof) ADVANCE(10);
       if (lookahead == 'f') ADVANCE(1);
-      if (lookahead == 't') ADVANCE(4);
+      if (lookahead == 'n') ADVANCE(9);
+      if (lookahead == 't') ADVANCE(6);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(0);
       END_STATE();
@@ -85,25 +93,37 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == 'a') ADVANCE(3);
       END_STATE();
     case 2:
-      if (lookahead == 'e') ADVANCE(8);
+      if (lookahead == 'e') ADVANCE(11);
       END_STATE();
     case 3:
-      if (lookahead == 'l') ADVANCE(5);
+      if (lookahead == 'l') ADVANCE(7);
       END_STATE();
     case 4:
-      if (lookahead == 'r') ADVANCE(6);
+      if (lookahead == 'l') ADVANCE(12);
       END_STATE();
     case 5:
-      if (lookahead == 's') ADVANCE(2);
+      if (lookahead == 'l') ADVANCE(4);
       END_STATE();
     case 6:
-      if (lookahead == 'u') ADVANCE(2);
+      if (lookahead == 'r') ADVANCE(8);
       END_STATE();
     case 7:
-      ACCEPT_TOKEN(ts_builtin_sym_end);
+      if (lookahead == 's') ADVANCE(2);
       END_STATE();
     case 8:
+      if (lookahead == 'u') ADVANCE(2);
+      END_STATE();
+    case 9:
+      if (lookahead == 'u') ADVANCE(5);
+      END_STATE();
+    case 10:
+      ACCEPT_TOKEN(ts_builtin_sym_end);
+      END_STATE();
+    case 11:
       ACCEPT_TOKEN(sym_boolean);
+      END_STATE();
+    case 12:
+      ACCEPT_TOKEN(sym_null);
       END_STATE();
     default:
       return false;
@@ -122,21 +142,25 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [0] = {
     [ts_builtin_sym_end] = ACTIONS(1),
     [sym_boolean] = ACTIONS(1),
+    [sym_null] = ACTIONS(1),
   },
   [1] = {
     [sym_expression] = STATE(4),
     [aux_sym_expression_repeat1] = STATE(2),
     [sym_boolean] = ACTIONS(3),
+    [sym_null] = ACTIONS(3),
   },
   [2] = {
     [aux_sym_expression_repeat1] = STATE(3),
     [ts_builtin_sym_end] = ACTIONS(5),
     [sym_boolean] = ACTIONS(7),
+    [sym_null] = ACTIONS(7),
   },
   [3] = {
     [aux_sym_expression_repeat1] = STATE(3),
     [ts_builtin_sym_end] = ACTIONS(9),
     [sym_boolean] = ACTIONS(11),
+    [sym_null] = ACTIONS(11),
   },
 };
 

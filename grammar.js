@@ -11,8 +11,9 @@ module.exports = grammar({
   name: "gh_actions_expressions",
 
   rules: {
-    expression: ($) => repeat1(choice($.boolean)),
+    expression: ($) => repeat1(choice($.boolean, $.null)),
 
     boolean: () => /true|false/,
+    null: () => /null/,
   },
 });
