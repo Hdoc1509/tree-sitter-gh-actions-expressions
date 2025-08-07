@@ -15,13 +15,38 @@
         {
           "type": "null",
           "named": true
+        },
+        {
+          "type": "number",
+          "named": true
         }
       ]
     }
   },
   {
+    "type": "number",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "0x",
+    "named": false
+  },
+  {
     "type": "boolean",
     "named": true
+  },
+  {
+    "type": "e",
+    "named": false
   },
   {
     "type": "null",

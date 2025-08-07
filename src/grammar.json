@@ -14,6 +14,10 @@
           {
             "type": "SYMBOL",
             "name": "null"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "number"
           }
         ]
       }
@@ -25,6 +29,106 @@
     "null": {
       "type": "PATTERN",
       "value": "null"
+    },
+    "_dot": {
+      "type": "STRING",
+      "value": "."
+    },
+    "number": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_int"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_float"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_hex"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_exp"
+        }
+      ]
+    },
+    "_int": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "_float": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "-"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_int"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_dot"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_int"
+        }
+      ]
+    },
+    "_hex": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "0x"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[0-9a-f]+"
+        }
+      ]
+    },
+    "_exp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_float"
+        },
+        {
+          "type": "STRING",
+          "value": "e"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "-"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_int"
+        }
+      ]
     }
   },
   "extras": [
