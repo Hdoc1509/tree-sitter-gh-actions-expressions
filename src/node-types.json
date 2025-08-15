@@ -19,6 +19,10 @@
         {
           "type": "number",
           "named": true
+        },
+        {
+          "type": "string",
+          "named": true
         }
       ]
     }
@@ -27,6 +31,29 @@
     "type": "number",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scape_sequence",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "'",
+    "named": false
   },
   {
     "type": "-",
@@ -50,6 +77,14 @@
   },
   {
     "type": "null",
+    "named": true
+  },
+  {
+    "type": "scape_sequence",
+    "named": true
+  },
+  {
+    "type": "string_content",
     "named": true
   }
 ]

@@ -11,9 +11,10 @@ module.exports = grammar({
   name: "gh_actions_expressions",
 
   rules: {
-    expression: ($) => repeat1(choice($.boolean, $.null, $.number)),
+    expression: ($) => repeat1(choice($.boolean, $.null, $.number, $.string)),
 
     boolean: () => /true|false/,
+
     null: () => /null/,
 
     _dot: () => ".",
@@ -23,5 +24,10 @@ module.exports = grammar({
     _float: ($) => seq(optional("-"), $._int, $._dot, $._int),
     _hex: () => seq("0x", /[0-9a-f]+/),
     _exp: ($) => seq($._float, "e", optional("-"), $._int),
+
+    string: ($) =>
+      seq("'", repeat(choice($.string_content, $.scape_sequence)), "'"),
+    string_content: (_) => token(prec(-1, /([^'\\\r\n]|\\(.|\r?\n))+/)),
+    scape_sequence: () => token.immediate("''"),
   },
 });
