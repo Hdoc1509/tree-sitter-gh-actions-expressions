@@ -32,3 +32,20 @@ number
   (number)
   (number)
   (number))
+
+==================
+string
+==================
+''
+'Example string'
+'It''s open source!'
+---
+
+(expression
+  (string)
+  (string
+    (string_content))
+  (string
+    (string_content)
+    (scape_sequence)
+    (string_content)))
