@@ -68,7 +68,7 @@
       ]
     },
     "_test:watch": {
-      "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
+      "command": "clear && echo 'Running parser tests...' && tree-sitter test",
       "dependencies": [
         "gen"
       ],
