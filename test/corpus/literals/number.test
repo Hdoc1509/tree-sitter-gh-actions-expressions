@@ -1,0 +1,43 @@
+=======
+integer
+=======
+if: 711
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (number)))
+
+=====
+float
+=====
+if: -9.2
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (number)))
+
+===
+hex
+===
+if: 0xff
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (number)))
+
+===========
+exponential
+===========
+if: -2.99e-2
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (number)))

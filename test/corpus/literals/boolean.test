@@ -1,0 +1,21 @@
+====
+true
+====
+if: true
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (boolean)))
+
+=====
+false
+=====
+if: false
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (boolean)))

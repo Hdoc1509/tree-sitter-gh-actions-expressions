@@ -1,0 +1,36 @@
+=====
+empty
+=====
+if: ''
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (string)))
+
+======
+normal
+======
+if: 'Example string'
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (string
+      (string_content))))
+
+===========
+quote scape
+===========
+if: 'It''s open source!'
+---
+
+(pair
+  key: (if_key)
+  value: (expression
+    (string
+      (string_content)
+      (scape_sequence)
+      (string_content))))
