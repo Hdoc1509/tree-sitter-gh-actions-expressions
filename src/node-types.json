@@ -13,6 +13,10 @@
       "required": true,
       "types": [
         {
+          "type": "context",
+          "named": true
+        },
+        {
           "type": "literal",
           "named": true
         }
@@ -27,6 +31,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "context",
+          "named": true
+        },
         {
           "type": "literal",
           "named": true
@@ -139,6 +147,10 @@
   {
     "type": ":",
     "named": false
+  },
+  {
+    "type": "context",
+    "named": true
   },
   {
     "type": "e",

@@ -21,8 +21,8 @@ module.exports = grammar({
       ),
     if_key: () => "if",
 
-    expression: ($) => $.literal,
-    delimited_expression: ($) => seq("${{", $.literal, "}}"),
+    expression: ($) => choice($.context, $.literal),
+    delimited_expression: ($) => seq("${{", choice($.context, $.literal), "}}"),
 
     literal: ($) => choice($.boolean, $.null, $.number, $.string),
 
@@ -42,5 +42,7 @@ module.exports = grammar({
       seq("'", repeat(choice($.string_content, $.scape_sequence)), "'"),
     string_content: (_) => token(prec(-1, /([^'\\\r\n]|\\(.|\r?\n))+/)),
     scape_sequence: () => token.immediate("''"),
+
+    context: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
   },
 });

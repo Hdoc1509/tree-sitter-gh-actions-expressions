@@ -45,8 +45,17 @@
       "value": "if"
     },
     "expression": {
-      "type": "SYMBOL",
-      "name": "literal"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "context"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "literal"
+        }
+      ]
     },
     "delimited_expression": {
       "type": "SEQ",
@@ -56,8 +65,17 @@
           "value": "${{"
         },
         {
-          "type": "SYMBOL",
-          "name": "literal"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "context"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "literal"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -249,6 +267,10 @@
         "type": "STRING",
         "value": "''"
       }
+    },
+    "context": {
+      "type": "PATTERN",
+      "value": "[_a-zA-Z][-_a-zA-Z0-9]+"
     }
   },
   "extras": [
