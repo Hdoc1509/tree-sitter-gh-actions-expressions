@@ -171,6 +171,10 @@
       "required": true,
       "types": [
         {
+          "type": "and",
+          "named": true
+        },
+        {
           "type": "eq",
           "named": true
         }
@@ -290,6 +294,10 @@
   {
     "type": ":",
     "named": false
+  },
+  {
+    "type": "and",
+    "named": true
   },
   {
     "type": "asterisk",

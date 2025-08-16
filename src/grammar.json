@@ -69,25 +69,20 @@
           "name": "_evaluation"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "operator"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_evaluation"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "operator"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_evaluation"
+              }
+            ]
+          }
         }
       ]
     },
@@ -118,25 +113,20 @@
               "name": "_evaluation"
             },
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "operator"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "_evaluation"
-                    }
-                  ]
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "operator"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_evaluation"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -448,12 +438,25 @@
       "value": "!"
     },
     "operator": {
-      "type": "SYMBOL",
-      "name": "eq"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "eq"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "and"
+        }
+      ]
     },
     "eq": {
       "type": "STRING",
       "value": "=="
+    },
+    "and": {
+      "type": "STRING",
+      "value": "&&"
     }
   },
   "extras": [
