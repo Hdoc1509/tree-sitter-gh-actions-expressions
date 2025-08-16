@@ -11,7 +11,13 @@ module.exports = grammar({
   name: "gh_actions_expressions",
 
   rules: {
-    expression: ($) => repeat1(choice($.boolean, $.null, $.number, $.string)),
+    pair: ($) => $._if_pair,
+
+    _if_pair: ($) =>
+      seq(field("key", $.if_key), ":", field("value", $.expression)),
+    if_key: () => "if",
+
+    expression: ($) => choice($.boolean, $.null, $.number, $.string),
 
     boolean: () => /true|false/,
 

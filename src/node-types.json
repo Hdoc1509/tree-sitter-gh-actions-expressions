@@ -2,10 +2,9 @@
   {
     "type": "expression",
     "named": true,
-    "root": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -31,6 +30,33 @@
     "type": "number",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "pair",
+    "named": true,
+    "root": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "if_key",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "string",
@@ -68,12 +94,20 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": "boolean",
     "named": true
   },
   {
     "type": "e",
     "named": false
+  },
+  {
+    "type": "if_key",
+    "named": true
   },
   {
     "type": "null",
