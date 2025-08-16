@@ -62,13 +62,8 @@
       ]
     },
     "expression": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_evaluation"
-        }
-      ]
+      "type": "SYMBOL",
+      "name": "_evaluation"
     },
     "delimited_expression": {
       "type": "SEQ",
@@ -78,13 +73,8 @@
           "value": "${{"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_evaluation"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_evaluation"
         },
         {
           "type": "STRING",

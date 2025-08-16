@@ -23,8 +23,8 @@ module.exports = grammar({
 
     _evaluation: ($) => choice($.literal, $.context, $.function_call),
 
-    expression: ($) => choice($._evaluation),
-    delimited_expression: ($) => seq("${{", choice($._evaluation), "}}"),
+    expression: ($) => $._evaluation,
+    delimited_expression: ($) => seq("${{", $._evaluation, "}}"),
 
     literal: ($) => choice($.boolean, $.null, $.number, $.string),
 
