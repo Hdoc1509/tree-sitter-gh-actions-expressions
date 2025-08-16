@@ -74,7 +74,7 @@
       ],
       "files": [
         "grammar.js",
-        "test/corpus/*.txt"
+        "test/corpus/*.test"
       ]
     }
   }
