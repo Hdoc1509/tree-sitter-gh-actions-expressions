@@ -272,9 +272,43 @@
       "type": "PATTERN",
       "value": "[_a-zA-Z][-_a-zA-Z0-9]+"
     },
-    "context": {
+    "property_deref": {
       "type": "SYMBOL",
-      "name": "identifier"
+      "name": "_dot"
+    },
+    "context": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "property"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "property": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "property_deref"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
     }
   },
   "extras": [

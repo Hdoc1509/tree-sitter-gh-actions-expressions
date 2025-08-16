@@ -44,6 +44,9 @@ module.exports = grammar({
     scape_sequence: () => token.immediate("''"),
 
     identifier: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
-    context: ($) => $.identifier,
+    property_deref: ($) => $._dot,
+
+    context: ($) => seq($.identifier, optional($.property)),
+    property: ($) => seq($.property_deref, $.identifier),
   },
 });
