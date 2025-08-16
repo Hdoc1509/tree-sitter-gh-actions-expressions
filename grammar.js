@@ -21,8 +21,9 @@ module.exports = grammar({
       ),
     if_key: () => "if",
 
-    expression: ($) => choice($.context, $.literal),
-    delimited_expression: ($) => seq("${{", choice($.context, $.literal), "}}"),
+    expression: ($) => choice($.context, $.literal, $.function_call),
+    delimited_expression: ($) =>
+      seq("${{", choice($.context, $.literal, $.function_call), "}}"),
 
     literal: ($) => choice($.boolean, $.null, $.number, $.string),
 
@@ -49,5 +50,7 @@ module.exports = grammar({
 
     context: ($) => seq($.identifier, repeat($.property)),
     property: ($) => seq($.property_deref, choice($.identifier, $.asterisk)),
+
+    function_call: ($) => seq(field("function", $.identifier), "()"),
   },
 });

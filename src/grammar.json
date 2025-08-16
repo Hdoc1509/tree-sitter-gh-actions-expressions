@@ -54,6 +54,10 @@
         {
           "type": "SYMBOL",
           "name": "literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function_call"
         }
       ]
     },
@@ -74,6 +78,10 @@
             {
               "type": "SYMBOL",
               "name": "literal"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "function_call"
             }
           ]
         },
@@ -315,6 +323,23 @@
               "name": "asterisk"
             }
           ]
+        }
+      ]
+    },
+    "function_call": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "function",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "()"
         }
       ]
     }
