@@ -19,7 +19,7 @@ module.exports = grammar({
 
     expression: ($) => choice($.boolean, $.null, $.number, $.string),
 
-    boolean: () => /true|false/,
+    boolean: () => choice("true", "false"),
 
     null: () => "null",
 

@@ -57,8 +57,17 @@
       ]
     },
     "boolean": {
-      "type": "PATTERN",
-      "value": "true|false"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "true"
+        },
+        {
+          "type": "STRING",
+          "value": "false"
+        }
+      ]
     },
     "null": {
       "type": "STRING",

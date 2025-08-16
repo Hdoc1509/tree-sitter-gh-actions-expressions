@@ -1,5 +1,10 @@
 [
   {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "expression",
     "named": true,
     "fields": {},
@@ -98,11 +103,11 @@
     "named": false
   },
   {
-    "type": "boolean",
-    "named": true
+    "type": "e",
+    "named": false
   },
   {
-    "type": "e",
+    "type": "false",
     "named": false
   },
   {
@@ -120,5 +125,9 @@
   {
     "type": "string_content",
     "named": true
+  },
+  {
+    "type": "true",
+    "named": false
   }
 ]
