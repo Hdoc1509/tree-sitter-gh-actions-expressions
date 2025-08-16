@@ -48,3 +48,35 @@ if: fromJSON('{"key":"value"}')
         (literal
           (string
             (string_content)))))))
+
+===================
+multiple parameters
+===================
+if: contains(github.event.issue.labels.*.name, 'bug')
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (function_call
+      function: (identifier)
+      arguments: (arguments
+        (context
+          (identifier)
+          (property
+            (property_deref)
+            (identifier))
+          (property
+            (property_deref)
+            (identifier))
+          (property
+            (property_deref)
+            (identifier))
+          (property
+            (property_deref)
+            (asterisk))
+          (property
+            (property_deref)
+            (identifier)))
+        (literal
+          (string
+            (string_content)))))))
