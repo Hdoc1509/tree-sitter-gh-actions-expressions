@@ -1,0 +1,19 @@
+======
+simple
+======
+if: context
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (context)))
+
+==================
+simple (delimited)
+==================
+if: ${{ context }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (context)))
