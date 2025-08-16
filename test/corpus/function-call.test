@@ -19,3 +19,35 @@ if: ${{ myFunction() }}
   value: (delimited_expression
     (function_call
       function: (identifier))))
+
+================
+single context as parameter
+================
+if: toJSON(job)
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (function_call
+      function: (identifier)
+      arguments: (context
+        (identifier)))))
+
+===============================
+context with property as parameter
+===============================
+if: toJSON(steps.step_id.outputs)
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (function_call
+      function: (identifier)
+      arguments: (context
+        (identifier)
+        (property
+          (property_deref)
+          (identifier))
+        (property
+          (property_deref)
+          (identifier))))))
