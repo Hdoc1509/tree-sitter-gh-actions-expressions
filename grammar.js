@@ -21,7 +21,7 @@ module.exports = grammar({
 
     boolean: () => /true|false/,
 
-    null: () => /null/,
+    null: () => "null",
 
     _dot: () => ".",
 

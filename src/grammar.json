@@ -61,7 +61,7 @@
       "value": "true|false"
     },
     "null": {
-      "type": "PATTERN",
+      "type": "STRING",
       "value": "null"
     },
     "_dot": {
