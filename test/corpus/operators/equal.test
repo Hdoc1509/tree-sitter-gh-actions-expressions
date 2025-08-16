@@ -34,3 +34,29 @@ if: ${{ context.property == 123 }}
       (eq))
     (literal
       (number))))
+
+================
+multiple members
+================
+if: failure() && steps.demo.conclusion == 'failure' 
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (function_call
+      function: (identifier))
+    (operator
+      (and))
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier)))
+    (operator
+      (eq))
+    (literal
+      (string
+        (string_content)))))
