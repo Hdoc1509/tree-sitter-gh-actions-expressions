@@ -62,8 +62,34 @@
       ]
     },
     "expression": {
-      "type": "SYMBOL",
-      "name": "_evaluation"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_evaluation"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "operator"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_evaluation"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "delimited_expression": {
       "type": "SEQ",
@@ -73,20 +99,46 @@
           "value": "${{"
         },
         {
-          "type": "CHOICE",
+          "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "not"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "not"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
             },
             {
-              "type": "BLANK"
+              "type": "SYMBOL",
+              "name": "_evaluation"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "operator"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_evaluation"
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_evaluation"
         },
         {
           "type": "STRING",
@@ -394,6 +446,14 @@
     "not": {
       "type": "STRING",
       "value": "!"
+    },
+    "operator": {
+      "type": "SYMBOL",
+      "name": "eq"
+    },
+    "eq": {
+      "type": "STRING",
+      "value": "=="
     }
   },
   "extras": [

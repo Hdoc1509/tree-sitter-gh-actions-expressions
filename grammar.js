@@ -23,9 +23,18 @@ module.exports = grammar({
 
     _evaluation: ($) => choice($.literal, $.context, $.function_call),
 
-    expression: ($) => $._evaluation,
+    expression: ($) =>
+      seq($._evaluation, optional(seq($.operator, $._evaluation))),
     delimited_expression: ($) =>
-      seq("${{", optional($.not), $._evaluation, "}}"),
+      seq(
+        "${{",
+        seq(
+          optional($.not),
+          $._evaluation,
+          optional(seq($.operator, $._evaluation))
+        ),
+        "}}"
+      ),
 
     literal: ($) => choice($.boolean, $.null, $.number, $.string),
 
@@ -63,5 +72,7 @@ module.exports = grammar({
     arguments: ($) => seq($._evaluation, repeat(seq(",", $._evaluation))),
 
     not: () => "!",
+    operator: ($) => $.eq,
+    eq: () => "==",
   },
 });
