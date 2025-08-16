@@ -350,7 +350,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_evaluation"
+                "name": "arguments"
               },
               {
                 "type": "BLANK"
@@ -363,6 +363,10 @@
           "value": ")"
         }
       ]
+    },
+    "arguments": {
+      "type": "SYMBOL",
+      "name": "_evaluation"
     }
   },
   "extras": [

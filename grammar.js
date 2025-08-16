@@ -56,8 +56,9 @@ module.exports = grammar({
       seq(
         field("function", $.identifier),
         "(",
-        field("arguments", optional($._evaluation)),
+        field("arguments", optional($.arguments)),
         ")"
       ),
+    arguments: ($) => $._evaluation,
   },
 });

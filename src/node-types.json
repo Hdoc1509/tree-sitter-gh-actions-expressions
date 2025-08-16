@@ -1,5 +1,28 @@
 [
   {
+    "type": "arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "context",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "boolean",
     "named": true,
     "fields": {}
@@ -78,15 +101,7 @@
         "required": false,
         "types": [
           {
-            "type": "context",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "literal",
+            "type": "arguments",
             "named": true
           }
         ]
