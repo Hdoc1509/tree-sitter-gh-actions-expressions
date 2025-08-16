@@ -43,10 +43,11 @@ module.exports = grammar({
     string_content: (_) => token(prec(-1, /([^'\\\r\n]|\\(.|\r?\n))+/)),
     scape_sequence: () => token.immediate("''"),
 
+    asterisk: () => "*",
     identifier: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
     property_deref: ($) => $._dot,
 
     context: ($) => seq($.identifier, repeat($.property)),
-    property: ($) => seq($.property_deref, $.identifier),
+    property: ($) => seq($.property_deref, choice($.identifier, $.asterisk)),
   },
 });

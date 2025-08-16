@@ -133,6 +133,10 @@
       "required": true,
       "types": [
         {
+          "type": "asterisk",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -190,6 +194,10 @@
   {
     "type": ":",
     "named": false
+  },
+  {
+    "type": "asterisk",
+    "named": true
   },
   {
     "type": "e",

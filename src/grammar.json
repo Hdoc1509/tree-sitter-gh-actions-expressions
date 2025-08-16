@@ -268,6 +268,10 @@
         "value": "''"
       }
     },
+    "asterisk": {
+      "type": "STRING",
+      "value": "*"
+    },
     "identifier": {
       "type": "PATTERN",
       "value": "[_a-zA-Z][-_a-zA-Z0-9]+"
@@ -300,8 +304,17 @@
           "name": "property_deref"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "asterisk"
+            }
+          ]
         }
       ]
     }
