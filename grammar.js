@@ -14,10 +14,15 @@ module.exports = grammar({
     pair: ($) => $._if_pair,
 
     _if_pair: ($) =>
-      seq(field("key", $.if_key), ":", field("value", $.expression)),
+      seq(
+        field("key", $.if_key),
+        ":",
+        field("value", choice($.delimited_expression, $.expression))
+      ),
     if_key: () => "if",
 
     expression: ($) => choice($.boolean, $.null, $.number, $.string),
+    delimited_expression: ($) => seq("${{", $.expression, "}}"),
 
     boolean: () => choice("true", "false"),
 

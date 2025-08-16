@@ -25,8 +25,17 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "SYMBOL",
-            "name": "expression"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "delimited_expression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "expression"
+              }
+            ]
           }
         }
       ]
@@ -53,6 +62,23 @@
         {
           "type": "SYMBOL",
           "name": "string"
+        }
+      ]
+    },
+    "delimited_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "${{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
+          "type": "STRING",
+          "value": "}}"
         }
       ]
     },

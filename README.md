@@ -13,6 +13,9 @@
 ## References
 
 - [Github Actions expressions documentation][gh-actions-expressions-docs]
+- `if` conditional:
+  - [run.steps\[\*\].if][gh-run-steps-if]
+  - [jobs.\<job_id>.if][gh-jobs-jobid-if]
 
 ## Thanks
 
@@ -27,3 +30,5 @@ which is the base I use to create this grammar.
 [npm]: https://img.shields.io/npm/v/tree-sitter-gh-actions-expressions?logo=npm
 [pypi]: https://img.shields.io/pypi/v/tree-sitter-gh-actions-expressions?logo=pypi&logoColor=ffd242
 [gh-actions-expressions-docs]: https://docs.github.com/en/actions/reference/evaluate-expressions-in-workflows-and-actions
+[gh-run-steps-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/metadata-syntax#runsstepsif
+[gh-jobs-jobid-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idif
