@@ -365,8 +365,29 @@
       ]
     },
     "arguments": {
-      "type": "SYMBOL",
-      "name": "_evaluation"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_evaluation"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_evaluation"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "extras": [

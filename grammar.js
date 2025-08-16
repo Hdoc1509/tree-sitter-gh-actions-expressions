@@ -59,6 +59,6 @@ module.exports = grammar({
         field("arguments", optional($.arguments)),
         ")"
       ),
-    arguments: ($) => $._evaluation,
+    arguments: ($) => seq($._evaluation, repeat(seq(",", $._evaluation))),
   },
 });
