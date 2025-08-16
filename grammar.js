@@ -43,6 +43,7 @@ module.exports = grammar({
     string_content: (_) => token(prec(-1, /([^'\\\r\n]|\\(.|\r?\n))+/)),
     scape_sequence: () => token.immediate("''"),
 
-    context: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
+    identifier: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
+    context: ($) => $.identifier,
   },
 });

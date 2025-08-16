@@ -268,9 +268,13 @@
         "value": "''"
       }
     },
-    "context": {
+    "identifier": {
       "type": "PATTERN",
       "value": "[_a-zA-Z][-_a-zA-Z0-9]+"
+    },
+    "context": {
+      "type": "SYMBOL",
+      "name": "identifier"
     }
   },
   "extras": [
