@@ -34,20 +34,15 @@ if: toJSON(job)
         (identifier)))))
 
 ===============================
-context with property as parameter
+literal as parameter
 ===============================
-if: toJSON(steps.step_id.outputs)
+if: fromJSON('{"key":"value"}')
 ---
 (pair
   key: (if_key)
   value: (expression
     (function_call
       function: (identifier)
-      arguments: (context
-        (identifier)
-        (property
-          (property_deref)
-          (identifier))
-        (property
-          (property_deref)
-          (identifier))))))
+      arguments: (literal
+        (string
+          (string_content))))))

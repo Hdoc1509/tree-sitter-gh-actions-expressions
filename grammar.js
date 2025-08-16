@@ -51,6 +51,12 @@ module.exports = grammar({
     context: ($) => seq($.identifier, repeat($.property)),
     property: ($) => seq($.property_deref, choice($.identifier, $.asterisk)),
 
-    function_call: ($) => seq(field("function", $.identifier), "()"),
+    function_call: ($) =>
+      seq(
+        field("function", $.identifier),
+        "(",
+        field("arguments", optional(choice($.context, $.literal))),
+        ")"
+      ),
   },
 });
