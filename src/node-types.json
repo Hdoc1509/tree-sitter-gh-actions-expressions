@@ -13,7 +13,7 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "literal",
           "named": true
         }
       ]
@@ -21,6 +21,21 @@
   },
   {
     "type": "expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal",
     "named": true,
     "fields": {},
     "children": {

@@ -21,8 +21,10 @@ module.exports = grammar({
       ),
     if_key: () => "if",
 
-    expression: ($) => choice($.boolean, $.null, $.number, $.string),
-    delimited_expression: ($) => seq("${{", $.expression, "}}"),
+    expression: ($) => $.literal,
+    delimited_expression: ($) => seq("${{", $.literal, "}}"),
+
+    literal: ($) => choice($.boolean, $.null, $.number, $.string),
 
     boolean: () => choice("true", "false"),
 

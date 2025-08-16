@@ -45,6 +45,27 @@
       "value": "if"
     },
     "expression": {
+      "type": "SYMBOL",
+      "name": "literal"
+    },
+    "delimited_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "${{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "literal"
+        },
+        {
+          "type": "STRING",
+          "value": "}}"
+        }
+      ]
+    },
+    "literal": {
       "type": "CHOICE",
       "members": [
         {
@@ -62,23 +83,6 @@
         {
           "type": "SYMBOL",
           "name": "string"
-        }
-      ]
-    },
-    "delimited_expression": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "${{"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "expression"
-        },
-        {
-          "type": "STRING",
-          "value": "}}"
         }
       ]
     },
