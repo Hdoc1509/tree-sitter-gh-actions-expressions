@@ -44,20 +44,29 @@
       "type": "STRING",
       "value": "if"
     },
-    "expression": {
+    "_evaluation": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "context"
-        },
         {
           "type": "SYMBOL",
           "name": "literal"
         },
         {
           "type": "SYMBOL",
+          "name": "context"
+        },
+        {
+          "type": "SYMBOL",
           "name": "function_call"
+        }
+      ]
+    },
+    "expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_evaluation"
         }
       ]
     },
@@ -73,15 +82,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "literal"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "function_call"
+              "name": "_evaluation"
             }
           ]
         },
@@ -348,17 +349,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "context"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "literal"
-                  }
-                ]
+                "type": "SYMBOL",
+                "name": "_evaluation"
               },
               {
                 "type": "BLANK"

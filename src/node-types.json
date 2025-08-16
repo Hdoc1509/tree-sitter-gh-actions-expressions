@@ -82,6 +82,10 @@
             "named": true
           },
           {
+            "type": "function_call",
+            "named": true
+          },
+          {
             "type": "literal",
             "named": true
           }
