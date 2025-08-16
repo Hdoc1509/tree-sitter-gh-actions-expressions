@@ -46,7 +46,7 @@ module.exports = grammar({
     identifier: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
     property_deref: ($) => $._dot,
 
-    context: ($) => seq($.identifier, optional($.property)),
+    context: ($) => seq($.identifier, repeat($.property)),
     property: ($) => seq($.property_deref, $.identifier),
   },
 });
