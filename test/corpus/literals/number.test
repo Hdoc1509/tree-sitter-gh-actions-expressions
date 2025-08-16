@@ -9,6 +9,17 @@ if: 711
   value: (expression
     (number)))
 
+===================
+integer (delimited)
+===================
+if: ${{ 711 }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (expression
+      (number))))
+
 =====
 float
 =====
@@ -19,6 +30,17 @@ if: -9.2
   key: (if_key)
   value: (expression
     (number)))
+
+=================
+float (delimited)
+=================
+if: ${{ -9.2 }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (expression
+      (number))))
 
 ===
 hex
@@ -31,6 +53,18 @@ if: 0xff
   value: (expression
     (number)))
 
+===============
+hex (delimited)
+===============
+if: ${{ 0xff }}
+---
+
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (expression
+      (number))))
+
 ===========
 exponential
 ===========
@@ -41,3 +75,15 @@ if: -2.99e-2
   key: (if_key)
   value: (expression
     (number)))
+
+=======================
+exponential (delimited)
+=======================
+if: ${{ -2.99e-2 }}
+---
+
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (expression
+      (number))))

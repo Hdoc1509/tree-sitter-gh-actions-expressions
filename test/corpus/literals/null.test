@@ -8,3 +8,14 @@ if: null
   key: (if_key)
   value: (expression
     (null)))
+
+================
+null (delimited)
+================
+if: ${{ null }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (expression
+      (null))))
