@@ -1,0 +1,21 @@
+===========
+simple call
+===========
+if: myFunction()
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (function_call
+      function: (identifier))))
+
+=======================
+simple call (delimited)
+=======================
+if: ${{ myFunction() }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (function_call
+      function: (identifier))))
