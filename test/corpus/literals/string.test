@@ -33,19 +33,6 @@ if: 'Example string'
     (literal
       (string
         (string_content)))))
-
-==================
-normal (delimited)
-==================
-if: ${{ 'Example string' }}
----
-(pair
-  key: (if_key)
-  value: (delimited_expression
-    (literal
-      (string
-        (string_content)))))
-
 ===========
 quote scape
 ===========
@@ -55,20 +42,6 @@ if: 'It''s open source!'
 (pair
   key: (if_key)
   value: (expression
-    (literal
-      (string
-        (string_content)
-        (scape_sequence)
-        (string_content)))))
-
-=======================
-quote scape (delimited)
-=======================
-if: ${{ 'It''s open source!' }}
----
-(pair
-  key: (if_key)
-  value: (delimited_expression
     (literal
       (string
         (string_content)

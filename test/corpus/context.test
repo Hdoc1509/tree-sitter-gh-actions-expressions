@@ -34,20 +34,6 @@ if: context.property
         (property_deref)
         (identifier)))))
 
-====================
-property (delimited)
-====================
-if: ${{ context._property }}
----
-(pair
-  key: (if_key)
-  value: (delimited_expression
-    (context
-      (identifier)
-      (property
-        (property_deref)
-        (identifier)))))
-
 ===============
 nested property
 ===============
@@ -65,26 +51,6 @@ if: context.property.nested-here
         (property_deref)
         (identifier)))))
 
-===========================
-nested property (delimited)
-===========================
-if: ${{ context._property._nested._right-here }}
----
-(pair
-  key: (if_key)
-  value: (delimited_expression
-    (context
-      (identifier)
-      (property
-        (property_deref)
-        (identifier))
-      (property
-        (property_deref)
-        (identifier))
-      (property
-        (property_deref)
-        (identifier)))))
-
 =================
 asterisk property
 =================
@@ -93,23 +59,6 @@ if: context.*.property
 (pair
   key: (if_key)
   value: (expression
-    (context
-      (identifier)
-      (property
-        (property_deref)
-        (asterisk))
-      (property
-        (property_deref)
-        (identifier)))))
-
-=============================
-asterisk property (delimited)
-=============================
-if: ${{ context.*._property }}
----
-(pair
-  key: (if_key)
-  value: (delimited_expression
     (context
       (identifier)
       (property

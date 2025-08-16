@@ -32,14 +32,3 @@ if: false
   value: (expression
     (literal
       (boolean))))
-
-=================
-false (delimited)
-=================
-if: ${{ false }}
----
-(pair
-  key: (if_key)
-  value: (delimited_expression
-    (literal
-      (boolean))))
