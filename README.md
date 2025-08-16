@@ -10,6 +10,33 @@
 [Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
 [Github Actions expressions][gh-actions-expressions-docs]
 
+## Parser requirements
+
+- [`yaml`](https://github.com/tree-sitter/tree-sitter-yaml): injection to its
+  `block_mapping_pair` node
+
+## Usage in Editors
+
+### Neovim
+
+WIP
+
+### Helix
+
+WIP
+
+### Emacs
+
+WIP
+
+### In General
+
+WIP
+
+## Implementations
+
+WIP
+
 ## References
 
 - [Github Actions expressions documentation][gh-actions-expressions-docs]
