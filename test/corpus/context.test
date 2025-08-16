@@ -19,3 +19,31 @@ if: ${{ context }}
   value: (delimited_expression
     (context
       (identifier))))
+
+========
+property
+========
+if: context.property
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))))
+
+====================
+property (delimited)
+====================
+if: ${{ context._property }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))))
