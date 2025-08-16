@@ -1,0 +1,36 @@
+=================
+context to string
+=================
+if: github.repository == 'my-org/my-repo'
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))
+    (operator
+      (eq))
+    (literal
+      (string
+        (string_content)))))
+
+=============================
+context to number (delimited)
+=============================
+if: ${{ context.property == 123 }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))
+    (operator
+      (eq))
+    (literal
+      (number))))
