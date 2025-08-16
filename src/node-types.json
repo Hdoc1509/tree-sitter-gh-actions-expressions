@@ -51,7 +51,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -64,6 +64,10 @@
         },
         {
           "type": "literal",
+          "named": true
+        },
+        {
+          "type": "not",
           "named": true
         }
       ]
@@ -282,6 +286,10 @@
   },
   {
     "type": "if_key",
+    "named": true
+  },
+  {
+    "type": "not",
     "named": true
   },
   {

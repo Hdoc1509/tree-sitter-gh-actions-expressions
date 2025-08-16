@@ -18,3 +18,10 @@ if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
         (literal
           (string
             (string_content)))))))
+
+=======================
+error without delimiter
+:error
+=======================
+if: ! startsWith(github.ref, 'refs/tags/')
+---

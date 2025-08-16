@@ -73,6 +73,18 @@
           "value": "${{"
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "not"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "SYMBOL",
           "name": "_evaluation"
         },
@@ -378,6 +390,10 @@
           }
         }
       ]
+    },
+    "not": {
+      "type": "STRING",
+      "value": "!"
     }
   },
   "extras": [
