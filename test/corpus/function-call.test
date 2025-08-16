@@ -30,12 +30,13 @@ if: toJSON(job)
   value: (expression
     (function_call
       function: (identifier)
-      arguments: (context
-        (identifier)))))
+      arguments: (arguments
+        (context
+          (identifier))))))
 
-===============================
+====================
 literal as parameter
-===============================
+====================
 if: fromJSON('{"key":"value"}')
 ---
 (pair
@@ -43,6 +44,7 @@ if: fromJSON('{"key":"value"}')
   value: (expression
     (function_call
       function: (identifier)
-      arguments: (literal
-        (string
-          (string_content))))))
+      arguments: (arguments
+        (literal
+          (string
+            (string_content)))))))
