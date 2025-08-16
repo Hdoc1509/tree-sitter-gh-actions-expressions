@@ -7,7 +7,8 @@ if: ''
 (pair
   key: (if_key)
   value: (expression
-    (string)))
+    (literal
+      (string))))
 
 ==================
 emplty (delimited)
@@ -17,7 +18,7 @@ if: ${{ '' }}
 (pair
   key: (if_key)
   value: (delimited_expression
-    (expression
+    (literal
       (string))))
 
 ======
@@ -29,8 +30,9 @@ if: 'Example string'
 (pair
   key: (if_key)
   value: (expression
-    (string
-      (string_content))))
+    (literal
+      (string
+        (string_content)))))
 
 ==================
 normal (delimited)
@@ -40,7 +42,7 @@ if: ${{ 'Example string' }}
 (pair
   key: (if_key)
   value: (delimited_expression
-    (expression
+    (literal
       (string
         (string_content)))))
 
@@ -53,10 +55,11 @@ if: 'It''s open source!'
 (pair
   key: (if_key)
   value: (expression
-    (string
-      (string_content)
-      (scape_sequence)
-      (string_content))))
+    (literal
+      (string
+        (string_content)
+        (scape_sequence)
+        (string_content)))))
 
 =======================
 quote scape (delimited)
@@ -66,7 +69,7 @@ if: ${{ 'It''s open source!' }}
 (pair
   key: (if_key)
   value: (delimited_expression
-    (expression
+    (literal
       (string
         (string_content)
         (scape_sequence)
