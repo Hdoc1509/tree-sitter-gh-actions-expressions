@@ -1,0 +1,20 @@
+===
+Not
+===
+if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (not)
+    (function_call
+      function: (identifier)
+      arguments: (arguments
+        (context
+          (identifier)
+          (property
+            (property_deref)
+            (identifier)))
+        (literal
+          (string
+            (string_content)))))))
