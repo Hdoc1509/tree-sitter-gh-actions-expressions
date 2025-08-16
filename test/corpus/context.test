@@ -47,3 +47,40 @@ if: ${{ context._property }}
       (property
         (property_deref)
         (identifier)))))
+
+===============
+nested property
+===============
+if: context.property.nested-here
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier)))))
+
+===========================
+nested property (delimited)
+===========================
+if: ${{ context._property._nested._right-here }}
+---
+(pair
+  key: (if_key)
+  value: (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier)))))
