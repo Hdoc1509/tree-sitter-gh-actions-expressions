@@ -46,7 +46,7 @@ enum ts_symbol_identifiers {
   sym_ne = 28,
   sym_and = 29,
   sym_or = 30,
-  sym_pair = 31,
+  sym_source = 31,
   sym__if_pair = 32,
   sym__evaluation = 33,
   sym_expression = 34,
@@ -103,7 +103,7 @@ static const char * const ts_symbol_names[] = {
   [sym_ne] = "ne",
   [sym_and] = "and",
   [sym_or] = "or",
-  [sym_pair] = "pair",
+  [sym_source] = "source",
   [sym__if_pair] = "_if_pair",
   [sym__evaluation] = "_evaluation",
   [sym_expression] = "expression",
@@ -160,7 +160,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_ne] = sym_ne,
   [sym_and] = sym_and,
   [sym_or] = sym_or,
-  [sym_pair] = sym_pair,
+  [sym_source] = sym_source,
   [sym__if_pair] = sym__if_pair,
   [sym__evaluation] = sym__evaluation,
   [sym_expression] = sym_expression,
@@ -310,7 +310,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_pair] = {
+  [sym_source] = {
     .visible = true,
     .named = true,
   },
@@ -1049,7 +1049,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_or] = ACTIONS(1),
   },
   [1] = {
-    [sym_pair] = STATE(55),
+    [sym_source] = STATE(55),
     [sym__if_pair] = STATE(60),
     [anon_sym_if] = ACTIONS(3),
   },
@@ -2016,7 +2016,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [193] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__if_pair, 3, 0, 0),
   [195] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_delimited_expression, 5, 0, 0),
   [197] = {.entry = {.count = 1, .reusable = true}}, SHIFT(2),
-  [199] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pair, 1, 0, 0),
+  [199] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source, 1, 0, 0),
 };
 
 #ifdef __cplusplus

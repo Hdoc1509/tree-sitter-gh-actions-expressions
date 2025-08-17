@@ -210,26 +210,6 @@
     }
   },
   {
-    "type": "pair",
-    "named": true,
-    "root": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "delimited_expression",
-          "named": true
-        },
-        {
-          "type": "expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "property",
     "named": true,
     "fields": {},
@@ -256,6 +236,26 @@
     "type": "property_deref",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "source",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "delimited_expression",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "string",
