@@ -26,3 +26,43 @@ error if empty
 ==============
 if: ()
 ---
+
+==============
+with operators
+==============
+if: inputs.mode && inputs.execute && (success() || needs.dry-run.result == 'skipped')
+---
+(source
+  (expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))
+    (operator
+      (and))
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))
+    (operator
+      (and))
+    (logical_group
+      (function_call
+        function: (identifier))
+      (operator
+        (or))
+      (context
+        (identifier)
+        (property
+          (property_deref)
+          (identifier))
+        (property
+          (property_deref)
+          (identifier)))
+      (operator
+        (eq))
+      (literal
+        (string
+          (string_content))))))
