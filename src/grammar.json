@@ -78,6 +78,18 @@
                 "name": "operator"
               },
               {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "not"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
                 "type": "SYMBOL",
                 "name": "_evaluation"
               }
@@ -120,6 +132,18 @@
                   {
                     "type": "SYMBOL",
                     "name": "operator"
+                  },
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "not"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
                   },
                   {
                     "type": "SYMBOL",
@@ -447,6 +471,14 @@
         {
           "type": "SYMBOL",
           "name": "and"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "or"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ne"
         }
       ]
     },
@@ -457,6 +489,14 @@
     "and": {
       "type": "STRING",
       "value": "&&"
+    },
+    "or": {
+      "type": "STRING",
+      "value": "||"
+    },
+    "ne": {
+      "type": "STRING",
+      "value": "!="
     }
   },
   "extras": [

@@ -24,14 +24,17 @@ module.exports = grammar({
     _evaluation: ($) => choice($.literal, $.context, $.function_call),
 
     expression: ($) =>
-      seq($._evaluation, repeat(seq($.operator, $._evaluation))),
+      seq(
+        $._evaluation,
+        repeat(seq($.operator, optional($.not), $._evaluation))
+      ),
     delimited_expression: ($) =>
       seq(
         "${{",
         seq(
           optional($.not),
           $._evaluation,
-          repeat(seq($.operator, $._evaluation))
+          repeat(seq($.operator, optional($.not), $._evaluation))
         ),
         "}}"
       ),
@@ -72,8 +75,11 @@ module.exports = grammar({
     arguments: ($) => seq($._evaluation, repeat(seq(",", $._evaluation))),
 
     not: () => "!",
-    operator: ($) => choice($.eq, $.and),
+    operator: ($) => choice($.eq, $.and, $.or, $.ne),
     eq: () => "==",
     and: () => "&&",
+    or: () => "||",
+    ne: () => "!=",
+    // TODO: add rest of operators
   },
 });
