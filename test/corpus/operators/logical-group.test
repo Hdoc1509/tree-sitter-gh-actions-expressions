@@ -1,0 +1,28 @@
+===========
+basic group
+===========
+if: (success())
+---
+(source
+  (expression
+    (logical_group
+      (function_call
+        function: (identifier)))))
+
+=======================
+basic group (delimited)
+=======================
+if: ${{ (success()) }}
+---
+(source
+  (delimited_expression
+    (logical_group
+      (function_call
+        function: (identifier)))))
+
+==============
+error if empty
+:error
+==============
+if: ()
+---
