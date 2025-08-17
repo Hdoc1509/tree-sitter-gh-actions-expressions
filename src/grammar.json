@@ -466,7 +466,27 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "lt"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "le"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gt"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ge"
+        },
+        {
+          "type": "SYMBOL",
           "name": "eq"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ne"
         },
         {
           "type": "SYMBOL",
@@ -475,16 +495,32 @@
         {
           "type": "SYMBOL",
           "name": "or"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "ne"
         }
       ]
+    },
+    "lt": {
+      "type": "STRING",
+      "value": "<"
+    },
+    "le": {
+      "type": "STRING",
+      "value": "<="
+    },
+    "gt": {
+      "type": "STRING",
+      "value": ">"
+    },
+    "ge": {
+      "type": "STRING",
+      "value": ">="
     },
     "eq": {
       "type": "STRING",
       "value": "=="
+    },
+    "ne": {
+      "type": "STRING",
+      "value": "!="
     },
     "and": {
       "type": "STRING",
@@ -493,10 +529,6 @@
     "or": {
       "type": "STRING",
       "value": "||"
-    },
-    "ne": {
-      "type": "STRING",
-      "value": "!="
     }
   },
   "extras": [

@@ -75,11 +75,14 @@ module.exports = grammar({
     arguments: ($) => seq($._evaluation, repeat(seq(",", $._evaluation))),
 
     not: () => "!",
-    operator: ($) => choice($.eq, $.and, $.or, $.ne),
+    operator: ($) => choice($.lt, $.le, $.gt, $.ge, $.eq, $.ne, $.and, $.or),
+    lt: () => "<",
+    le: () => "<=",
+    gt: () => ">",
+    ge: () => ">=",
     eq: () => "==",
+    ne: () => "!=",
     and: () => "&&",
     or: () => "||",
-    ne: () => "!=",
-    // TODO: add rest of operators
   },
 });

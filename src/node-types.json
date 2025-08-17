@@ -183,6 +183,22 @@
           "named": true
         },
         {
+          "type": "ge",
+          "named": true
+        },
+        {
+          "type": "gt",
+          "named": true
+        },
+        {
+          "type": "le",
+          "named": true
+        },
+        {
+          "type": "lt",
+          "named": true
+        },
+        {
           "type": "ne",
           "named": true
         },
@@ -328,11 +344,27 @@
     "named": false
   },
   {
+    "type": "ge",
+    "named": true
+  },
+  {
+    "type": "gt",
+    "named": true
+  },
+  {
     "type": "identifier",
     "named": true
   },
   {
     "type": "if_key",
+    "named": true
+  },
+  {
+    "type": "le",
+    "named": true
+  },
+  {
+    "type": "lt",
     "named": true
   },
   {
