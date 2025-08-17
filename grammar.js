@@ -16,7 +16,8 @@ module.exports = grammar({
     _if_pair: ($) =>
       seq("if", ":", choice($.delimited_expression, $.expression)),
 
-    _evaluation: ($) => choice($.literal, $.context, $.function_call),
+    _evaluation: ($) =>
+      choice($.literal, $.context, $.function_call, $.logical_group),
 
     expression: ($) =>
       seq(
@@ -81,5 +82,7 @@ module.exports = grammar({
     ne: () => "!=",
     and: () => "&&",
     or: () => "||",
+
+    logical_group: ($) => seq("(", $._evaluation, ")"),
   },
 });
