@@ -83,6 +83,7 @@ module.exports = grammar({
     and: () => "&&",
     or: () => "||",
 
-    logical_group: ($) => seq("(", $._evaluation, ")"),
+    logical_group: ($) =>
+      seq("(", seq($._evaluation, repeat(seq($.operator, $._evaluation))), ")"),
   },
 });
