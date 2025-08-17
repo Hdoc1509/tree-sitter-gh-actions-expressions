@@ -5,8 +5,7 @@ if: 711
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (number))))
 
@@ -16,8 +15,7 @@ integer (delimited)
 if: ${{ 711 }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (literal
       (number))))
 
@@ -28,8 +26,7 @@ if: -9.2
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (number))))
 ===
@@ -39,8 +36,7 @@ if: 0xff
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (number))))
 
@@ -51,7 +47,6 @@ if: -2.99e-2
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (number))))

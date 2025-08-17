@@ -5,8 +5,7 @@ if: null
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (null))))
 
@@ -16,7 +15,6 @@ null (delimited)
 if: ${{ null }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (literal
       (null))))

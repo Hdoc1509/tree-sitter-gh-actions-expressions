@@ -4,8 +4,7 @@ simple call
 if: myFunction()
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (function_call
       function: (identifier))))
 
@@ -15,8 +14,7 @@ simple call (delimited)
 if: ${{ myFunction() }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (function_call
       function: (identifier))))
 
@@ -26,8 +24,7 @@ single context as parameter
 if: toJSON(job)
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (function_call
       function: (identifier)
       arguments: (arguments
@@ -40,8 +37,7 @@ literal as parameter
 if: fromJSON('{"key":"value"}')
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (function_call
       function: (identifier)
       arguments: (arguments
@@ -55,8 +51,7 @@ multiple parameters
 if: contains(github.event.issue.labels.*.name, 'bug')
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (function_call
       function: (identifier)
       arguments: (arguments

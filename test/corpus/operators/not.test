@@ -4,8 +4,7 @@ Not
 if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (not)
     (function_call
       function: (identifier)

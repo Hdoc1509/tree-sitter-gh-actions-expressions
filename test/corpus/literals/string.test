@@ -5,8 +5,7 @@ if: ''
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (string))))
 
@@ -16,8 +15,7 @@ emplty (delimited)
 if: ${{ '' }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (literal
       (string))))
 
@@ -28,20 +26,18 @@ if: 'Example string'
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (string
         (string_content)))))
 ===========
 quote scape
 ===========
-if: 'It''s open source!'
+if: 'It''s open pair!'
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (string
         (string_content)

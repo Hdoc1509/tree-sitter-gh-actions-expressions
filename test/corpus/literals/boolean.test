@@ -5,8 +5,7 @@ if: true
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (boolean))))
 
@@ -16,8 +15,7 @@ true (delimited)
 if: ${{ true }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (literal
       (boolean))))
 
@@ -28,7 +26,6 @@ if: false
 ---
 
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (literal
       (boolean))))

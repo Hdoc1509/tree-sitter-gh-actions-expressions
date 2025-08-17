@@ -4,8 +4,7 @@ simple
 if: context
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (context
       (identifier))))
 
@@ -15,8 +14,7 @@ simple (delimited)
 if: ${{ context }}
 ---
 (pair
-  key: (if_key)
-  value: (delimited_expression
+  (delimited_expression
     (context
       (identifier))))
 
@@ -26,8 +24,7 @@ property
 if: context.property
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (context
       (identifier)
       (property
@@ -40,8 +37,7 @@ nested property
 if: context.property.nested-here
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (context
       (identifier)
       (property
@@ -57,8 +53,7 @@ asterisk property
 if: context.*.property
 ---
 (pair
-  key: (if_key)
-  value: (expression
+  (expression
     (context
       (identifier)
       (property
