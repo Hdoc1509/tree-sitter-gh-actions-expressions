@@ -60,3 +60,43 @@ if: failure() && steps.demo.conclusion == 'failure'
     (literal
       (string
         (string_content)))))
+
+==================================
+multiple members with not operator
+==================================
+if: failure() && ! startsWith(github.ref, 'refs/tags/') || steps.demo.conclusion != 'failure'
+---
+(pair
+  key: (if_key)
+  value: (expression
+    (function_call
+      function: (identifier))
+    (operator
+      (and))
+    (not)
+    (function_call
+      function: (identifier)
+      arguments: (arguments
+        (context
+          (identifier)
+          (property
+            (property_deref)
+            (identifier)))
+        (literal
+          (string
+            (string_content)))))
+    (operator
+      (or))
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier)))
+    (operator
+      (ne))
+    (literal
+      (string
+        (string_content)))))
