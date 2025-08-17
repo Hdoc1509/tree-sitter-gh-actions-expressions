@@ -3,7 +3,7 @@ Not
 ===
 if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
 ---
-(pair
+(source
   (delimited_expression
     (not)
     (function_call

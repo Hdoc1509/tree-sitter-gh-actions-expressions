@@ -4,7 +4,7 @@ empty
 if: ''
 ---
 
-(pair
+(source
   (expression
     (literal
       (string))))
@@ -14,7 +14,7 @@ emplty (delimited)
 ==================
 if: ${{ '' }}
 ---
-(pair
+(source
   (delimited_expression
     (literal
       (string))))
@@ -25,7 +25,7 @@ normal
 if: 'Example string'
 ---
 
-(pair
+(source
   (expression
     (literal
       (string
@@ -33,10 +33,10 @@ if: 'Example string'
 ===========
 quote scape
 ===========
-if: 'It''s open pair!'
+if: 'It''s open source!'
 ---
 
-(pair
+(source
   (expression
     (literal
       (string

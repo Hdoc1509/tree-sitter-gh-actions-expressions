@@ -4,7 +4,7 @@ integer
 if: 711
 ---
 
-(pair
+(source
   (expression
     (literal
       (number))))
@@ -14,7 +14,7 @@ integer (delimited)
 ===================
 if: ${{ 711 }}
 ---
-(pair
+(source
   (delimited_expression
     (literal
       (number))))
@@ -25,7 +25,7 @@ float
 if: -9.2
 ---
 
-(pair
+(source
   (expression
     (literal
       (number))))
@@ -35,7 +35,7 @@ hex
 if: 0xff
 ---
 
-(pair
+(source
   (expression
     (literal
       (number))))
@@ -46,7 +46,7 @@ exponential
 if: -2.99e-2
 ---
 
-(pair
+(source
   (expression
     (literal
       (number))))

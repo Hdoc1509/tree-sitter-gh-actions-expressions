@@ -3,7 +3,7 @@ simple
 ======
 if: context
 ---
-(pair
+(source
   (expression
     (context
       (identifier))))
@@ -13,7 +13,7 @@ simple (delimited)
 ==================
 if: ${{ context }}
 ---
-(pair
+(source
   (delimited_expression
     (context
       (identifier))))
@@ -23,7 +23,7 @@ property
 ========
 if: context.property
 ---
-(pair
+(source
   (expression
     (context
       (identifier)
@@ -36,7 +36,7 @@ nested property
 ===============
 if: context.property.nested-here
 ---
-(pair
+(source
   (expression
     (context
       (identifier)
@@ -52,7 +52,7 @@ asterisk property
 =================
 if: context.*.property
 ---
-(pair
+(source
   (expression
     (context
       (identifier)

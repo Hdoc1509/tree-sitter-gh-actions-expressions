@@ -4,7 +4,7 @@ true
 if: true
 ---
 
-(pair
+(source
   (expression
     (literal
       (boolean))))
@@ -14,7 +14,7 @@ true (delimited)
 ================
 if: ${{ true }}
 ---
-(pair
+(source
   (delimited_expression
     (literal
       (boolean))))
@@ -25,7 +25,7 @@ false
 if: false
 ---
 
-(pair
+(source
   (expression
     (literal
       (boolean))))
