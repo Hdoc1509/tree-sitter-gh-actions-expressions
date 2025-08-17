@@ -62,3 +62,39 @@ if: context.*.property
       (property
         (property_deref)
         (identifier)))))
+
+=====================
+index property string
+=====================
+if: github['sha']
+---
+(source
+  (expression
+    (context
+      (identifier)
+      (property
+        (index
+          (string
+            (string_content)))))))
+
+=====================
+index property number
+=====================
+if: job.services.postgres.ports[5432]
+---
+(source
+  (expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (property_deref)
+        (identifier))
+      (property
+        (index
+          (number))))))
