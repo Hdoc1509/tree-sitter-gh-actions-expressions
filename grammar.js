@@ -84,6 +84,14 @@ module.exports = grammar({
     or: () => "||",
 
     logical_group: ($) =>
-      seq("(", seq($._evaluation, repeat(seq($.operator, $._evaluation))), ")"),
+      seq(
+        "(",
+        seq(
+          optional($.not),
+          $._evaluation,
+          repeat(seq($.operator, optional($.not), $._evaluation))
+        ),
+        ")"
+      ),
   },
 });

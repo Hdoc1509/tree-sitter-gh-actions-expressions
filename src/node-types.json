@@ -217,6 +217,10 @@
           "named": true
         },
         {
+          "type": "not",
+          "named": true
+        },
+        {
           "type": "operator",
           "named": true
         }
