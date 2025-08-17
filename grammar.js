@@ -58,7 +58,9 @@ module.exports = grammar({
     property_deref: ($) => $._dot,
 
     context: ($) => seq($.identifier, repeat($.property)),
-    property: ($) => seq($.property_deref, choice($.identifier, $.asterisk)),
+    property: ($) =>
+      choice(seq($.property_deref, choice($.identifier, $.asterisk)), $.index),
+    index: ($) => seq("[", choice($.number, $.string), "]"),
 
     function_call: ($) =>
       seq(
