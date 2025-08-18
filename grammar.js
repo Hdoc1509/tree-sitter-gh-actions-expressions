@@ -13,7 +13,9 @@ module.exports = grammar({
   rules: {
     source: ($) => choice($._if_pair, $._pair),
 
-    _pair: ($) => seq(/\w+/, ":", $.delimited_expression),
+    _pair: ($) =>
+      seq(/\w+/, ":", repeat1(choice($._ignored_text, $.delimited_expression))),
+    _ignored_text: () => /[^$]+/,
 
     _if_pair: ($) =>
       seq("if", ":", choice($.delimited_expression, $.expression)),

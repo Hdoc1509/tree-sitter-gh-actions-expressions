@@ -27,10 +27,26 @@
           "value": ":"
         },
         {
-          "type": "SYMBOL",
-          "name": "delimited_expression"
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_ignored_text"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "delimited_expression"
+              }
+            ]
+          }
         }
       ]
+    },
+    "_ignored_text": {
+      "type": "PATTERN",
+      "value": "[^$]+"
     },
     "_if_pair": {
       "type": "SEQ",
