@@ -29,3 +29,16 @@ name: Build wheels on ${{matrix.os}} (${{matrix.arch}})
       (property
         (property_deref)
         (identifier)))))
+
+=============
+kebab-case key
+=============
+java-version: ${{ env.JAVA_JDK_VERSION }}
+---
+(source
+  (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))))
