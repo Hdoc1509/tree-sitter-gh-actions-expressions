@@ -17,3 +17,22 @@ error without delimiter
 =======================
 node-version: ${{matrix.node-version}}
 ---
+
+=====================================
+multiple expressions and ignored text
+=====================================
+name: Build wheels on ${{matrix.os}} (${{matrix.arch}})
+---
+(source
+  (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier))))
+  (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))))
