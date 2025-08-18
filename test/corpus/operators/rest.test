@@ -1,6 +1,6 @@
-=================
+=======================
 context equal to string
-=================
+=======================
 if: github.repository == 'my-org/my-repo'
 ---
 (source
@@ -16,9 +16,9 @@ if: github.repository == 'my-org/my-repo'
       (string
         (string_content)))))
 
-=============================
+===================================
 context equal to number (delimited)
-=============================
+===================================
 if: ${{ context.property == 123 }}
 ---
 (source
