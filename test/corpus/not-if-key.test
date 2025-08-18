@@ -1,0 +1,19 @@
+======
+simple
+======
+GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+---
+(source
+  (delimited_expression
+    (context
+      (identifier)
+      (property
+        (property_deref)
+        (identifier)))))
+
+=======================
+error without delimiter
+:error
+=======================
+node-version: ${{matrix.node-version}}
+---
