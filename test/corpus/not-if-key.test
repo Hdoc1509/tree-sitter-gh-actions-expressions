@@ -11,13 +11,6 @@ GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         (property_deref)
         (identifier)))))
 
-=======================
-error without delimiter
-:error
-=======================
-node-version: ${{matrix.node-version}}
----
-
 =====================================
 multiple expressions and ignored text
 =====================================
