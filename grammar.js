@@ -11,7 +11,9 @@ module.exports = grammar({
   name: "gh_actions_expressions",
 
   rules: {
-    source: ($) => $._if_pair,
+    source: ($) => choice($._if_pair, $._pair),
+
+    _pair: ($) => seq(/\w+/, ":", $.delimited_expression),
 
     _if_pair: ($) =>
       seq("if", ":", choice($.delimited_expression, $.expression)),

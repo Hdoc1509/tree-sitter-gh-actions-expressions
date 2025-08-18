@@ -3,8 +3,34 @@
   "name": "gh_actions_expressions",
   "rules": {
     "source": {
-      "type": "SYMBOL",
-      "name": "_if_pair"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_if_pair"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_pair"
+        }
+      ]
+    },
+    "_pair": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\w+"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "delimited_expression"
+        }
+      ]
     },
     "_if_pair": {
       "type": "SEQ",
