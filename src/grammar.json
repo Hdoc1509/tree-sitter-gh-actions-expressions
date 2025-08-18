@@ -20,7 +20,7 @@
       "members": [
         {
           "type": "PATTERN",
-          "value": "\\w+"
+          "value": "[\\w-]+"
         },
         {
           "type": "STRING",
