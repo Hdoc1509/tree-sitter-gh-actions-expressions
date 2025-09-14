@@ -1,5 +1,5 @@
 ---
-"gh-actions-expression": minor
+"gh-actions-expressions": minor
 ---
 
 Add `string` node

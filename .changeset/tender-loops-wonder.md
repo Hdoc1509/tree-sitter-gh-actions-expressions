@@ -1,5 +1,5 @@
 ---
-"gh-actions-expression": minor
+"gh-actions-expressions": minor
 ---
 
 Rename root node to `source`

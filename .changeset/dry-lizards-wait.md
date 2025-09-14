@@ -1,5 +1,5 @@
 ---
-"gh-actions-expression": minor
+"gh-actions-expressions": minor
 ---
 
 Only include expression nodes in syntax tree
