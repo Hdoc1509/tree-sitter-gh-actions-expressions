@@ -61,6 +61,8 @@ module.exports = grammar({
       seq("'", repeat(choice($.string_content, $.scape_sequence)), "'"),
     string_content: (_) => token(prec(-1, /([^'\\\r\n]|\\(.|\r?\n))+/)),
     scape_sequence: () => token.immediate("''"),
+    // TODO: scape braces and value's placeholder:
+    // format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat')
 
     asterisk: () => "*",
     identifier: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
