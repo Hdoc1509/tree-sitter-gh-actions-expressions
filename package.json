@@ -48,7 +48,7 @@
   },
   "scripts": {
     "dev": "npm run _test:watch --watch",
-    "dev:one": "npm run _test:wtach --watch -- --include",
+    "dev:one": "npm run _test:watch --watch -- --include",
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
