@@ -6,7 +6,7 @@
 
 (string) @string
 
-(scape_sequence) @string.scape
+(scape_sequence) @string.escape
 
 (context
   (identifier) @function.builtin
