@@ -12,6 +12,10 @@
 
 ## Parser requirements
 
+- [`gitignore`](https://github.com/shunsambongi/tree-sitter-gitignore)
+  (optional): for `hashFiles()` function
+- [`json`](https://github.com/tree-sitter/tree-sitter-json) (optional): for
+  `fromJSON()` function
 - [`yaml`](https://github.com/tree-sitter/tree-sitter-yaml): injection to its
   `block_mapping_pair` node
 
