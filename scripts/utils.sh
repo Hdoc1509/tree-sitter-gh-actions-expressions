@@ -1,11 +1,5 @@
 breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.md
 
-cargo_toml_file=$REPO_ROOT/Cargo.toml
-tree_sitter_json_file=$REPO_ROOT/tree-sitter.json
-pyproject_toml_file=$REPO_ROOT/pyproject.toml
-makefile=$REPO_ROOT/Makefile
-c_make_lists_file=$REPO_ROOT/CMakeLists.txt
-
 trigger_release() {
   if ! npx changeset version; then
     echo && error_log "Error while generating changelog!" && exit 1
@@ -50,15 +44,9 @@ update_package_files_version() {
 
   echo && info_log "Updating package files version..."
 
-  sed -i "s/version = \"$PREVIOUS_VERSION/version = \"$new_version/" "$cargo_toml_file"
-  sed -i "s/version = \"$PREVIOUS_VERSION/version = \"$new_version/" "$pyproject_toml_file"
-  sed -i "s/version\": \"$PREVIOUS_VERSION/version\": \"$new_version/" "$tree_sitter_json_file"
-  sed -i "s/VERSION := $PREVIOUS_VERSION/VERSION := $new_version/" "$makefile"
-  sed -i "s/VERSION \"$PREVIOUS_VERSION/VERSION \"$new_version/" "$c_make_lists_file"
+  npx tree-sitter version "$new_version"
 
   success_log "Package files version updated!\n"
-  info_log "If all changes are correct, update lock file by running:"
-  command_snippet "npm" "install"
   echo && warn_log "Don't forget to commit the changes!"
   command_snippet "git" "commit -m 'chore: release v$new_version'"
   echo && warn_log "Don't forget to generate git tags:"
