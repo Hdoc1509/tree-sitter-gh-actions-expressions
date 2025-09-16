@@ -48,7 +48,6 @@
   },
   "scripts": {
     "dev": "npm run _test:watch --watch",
-    "dev:one": "npm run _test:watch --watch -- --include",
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
@@ -57,7 +56,6 @@
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
     "test:all": "tree-sitter generate && tree-sitter test",
-    "test:one": "tree-sitter generate && tree-sitter test --include",
     "_test:watch": "wireit"
   },
   "wireit": {
