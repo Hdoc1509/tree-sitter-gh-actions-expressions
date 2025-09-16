@@ -36,11 +36,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-      - run: echo "TS_CLI_VERSION=$(jq --raw-output '.devDependencies["tree-sitter-cli"]' package.json)" >> "$GITHUB_ENV"
       - name: Set up tree-sitter
         uses: tree-sitter/setup-action/cli@v2
         with:
-          tree-sitter-ref: v${{ env.TS_CLI_VERSION }}
+          tree-sitter-ref: v0.25.9
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
         with:
