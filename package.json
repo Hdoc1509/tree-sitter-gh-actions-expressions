@@ -28,18 +28,19 @@
     "*.wasm"
   ],
   "dependencies": {
-    "node-addon-api": "8.3.1",
+    "node-addon-api": "8.5.0",
     "node-gyp-build": "4.8.4"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.7",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "prebuildify": "6.0.1",
-    "tree-sitter-cli": "0.25.8",
+    "tree-sitter": "0.22.4",
+    "tree-sitter-cli": "0.25.9",
     "wireit": "0.14.12"
   },
   "peerDependencies": {
-    "tree-sitter": "0.25.0"
+    "tree-sitter": "^0.22.4"
   },
   "peerDependenciesMeta": {
     "tree-sitter": {
