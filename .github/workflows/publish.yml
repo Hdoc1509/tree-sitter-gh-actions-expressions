@@ -43,6 +43,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./release
           publish_branch: release
+          commit_message: Deploy ${{ github.ref_name }}
 
   gh-release:
     permissions:
