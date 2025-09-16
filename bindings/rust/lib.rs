@@ -5,6 +5,7 @@
 //!
 //! ```
 //! let code = r#"
+//! if: job.services.postgres.ports[5432]
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_gh_actions_expressions::LANGUAGE;
