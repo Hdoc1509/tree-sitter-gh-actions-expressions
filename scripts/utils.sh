@@ -46,7 +46,7 @@ update_package_files_version() {
 
   npx tree-sitter version "$new_version"
 
-  success_log "Package files version updated!\n"
+  success_log "Package files version updated!"
   echo && warn_log "Don't forget to commit the changes!"
   command_snippet "git" "commit -m 'chore: release v$new_version'"
   echo && warn_log "Don't forget to generate git tags:"
