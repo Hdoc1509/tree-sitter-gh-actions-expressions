@@ -78,7 +78,8 @@ WIP
 
 ### In General
 
-WIP
+You can get the built files from the [`release` branch][release-branch]. If you
+have specific instructions for your editor, PR's are welcome.
 
 ## Implementations
 
@@ -108,3 +109,4 @@ which is the base I use to create this grammar.
 [gh-run-steps-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/metadata-syntax#runsstepsif
 [gh-jobs-jobid-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idif
 [gh-actions-context-docs]: https://docs.github.com/en/actions/reference/workflows-and-actions/contexts
+[release-branch]: https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/tree/release
