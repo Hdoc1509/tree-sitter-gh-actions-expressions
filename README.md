@@ -23,7 +23,50 @@
 
 ### Neovim
 
-WIP
+#### Requirements
+
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [Node.js](https://nodejs.org/en/download) (if ABI not compatible)
+- [tree-sitter cli](https://github.com/tree-sitter/tree-sitter/tree/master/crates/cli)
+  (if ABI not compatible)
+
+#### Installation
+
+1. Add the following to your `nvim-treesitter` configuration:
+
+   ```lua
+   local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+   -- NOTE: add the parser to `parser_config` before calling `setup()`
+   parser_config.gh_actions_expressions = {
+     install_info = {
+       url = 'https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions',
+       files = { "src/parser.c" },
+       revision = 'release',
+       -- if ABI version from neovim doesn't match the one from this grammar
+       -- requires Node.js and tree-sitter cli to be installed
+       requires_generate_from_grammar = true,
+     },
+   }
+
+   require('nvim-treesitter.configs').setup({
+     ensure_installed = {
+       --- other parsers
+       'gh_actions_expressions',
+     },
+     -- other options
+   })
+   ```
+
+2. Copy the queries from [`queries`](./queries) directory to
+   `queries/gh_actions_expression` directory in your `neovim` configuration
+   directory:
+
+   | With                  | Path                    |
+   | --------------------- | ----------------------- |
+   | Unix                  | `~/.config/nvim`        |
+   | Windows               | `~/AppData/Local/nvim`  |
+   | `XDG_CONFIG_HOME` set | `$XDG_CONFIG_HOME/nvim` |
 
 ### Helix
 
