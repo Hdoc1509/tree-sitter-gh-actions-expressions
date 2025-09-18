@@ -1,4 +1,4 @@
-# gh-actions-expressions
+# tree-sitter-gh-actions-expressions
 
 ## 0.1.2
 
