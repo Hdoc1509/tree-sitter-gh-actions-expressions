@@ -1,0 +1,80 @@
+{
+  "name": "tree-sitter-gh-actions-expressions",
+  "version": "0.1.1",
+  "description": "Github Actions expressions grammar for tree-sitter",
+  "repository": "https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions",
+  "license": "MIT",
+  "author": {
+    "name": "Héctor Ochoa",
+    "email": "hector.ochoa.dev@gmail.com"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "packageManager": "npm@10.9.0",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "gh-actions-expressions"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "8.5.0",
+    "node-gyp-build": "4.8.4"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.29.7",
+    "@svitejs/changesets-changelog-github-compact": "1.2.0",
+    "prebuildify": "6.0.1",
+    "tree-sitter": "0.22.4",
+    "tree-sitter-cli": "0.25.9",
+    "wireit": "0.14.12"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.22.4"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "dev": "npm run _test:watch --watch",
+    "gen": "wireit",
+    "hl": "tree-sitter highlight",
+    "install": "node-gyp-build",
+    "parser:release": "bash ./scripts/release-manager.sh",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js",
+    "test:all": "tree-sitter generate && tree-sitter test",
+    "_test:watch": "wireit"
+  },
+  "wireit": {
+    "gen": {
+      "command": "tree-sitter generate",
+      "files": [
+        "grammar.js"
+      ]
+    },
+    "_test:watch": {
+      "command": "clear && echo 'Running parser tests...' && tree-sitter test",
+      "dependencies": [
+        "gen"
+      ],
+      "files": [
+        "grammar.js",
+        "test/corpus/**/*.test"
+      ]
+    }
+  }
+}
