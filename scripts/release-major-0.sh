@@ -1,4 +1,4 @@
-unstable_message_regex='^\w+(\(.*\))?:!'
+unstable_message_regex='\w+(\(.*\))?!:'
 
 last_tag=$(git describe --tags --abbrev=0)
 breaking_changes_count=$(
