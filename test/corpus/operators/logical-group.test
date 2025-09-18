@@ -63,9 +63,8 @@ if: inputs.mode && inputs.execute && (success() || needs.dry-run.result == 'skip
           (identifier)))
       (operator
         (eq))
-      (literal
-        (string
-          (string_content))))))
+      (string
+        (string_content)))))
 
 =================
 with not operator
@@ -81,9 +80,8 @@ if: github.event_name != 'pull_request' && (! startsWith(github.ref, 'refs/tags/
           (identifier)))
     (operator
       (ne))
-    (literal
-      (string
-        (string_content)))
+    (string
+      (string_content))
     (operator
       (and))
     (logical_group
@@ -96,9 +94,8 @@ if: github.event_name != 'pull_request' && (! startsWith(github.ref, 'refs/tags/
             (property
               (property_deref)
               (identifier)))
-          (literal
-            (string
-              (string_content)))))
+          (string
+            (string_content))))
       (operator
         (or))
       (not)
@@ -110,6 +107,5 @@ if: github.event_name != 'pull_request' && (! startsWith(github.ref, 'refs/tags/
             (property
               (property_deref)
               (identifier)))
-          (literal
-            (string
-              (string_content))))))))
+          (string
+            (string_content)))))))

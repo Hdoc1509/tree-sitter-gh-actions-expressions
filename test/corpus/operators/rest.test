@@ -12,9 +12,8 @@ if: github.repository == 'my-org/my-repo'
         (identifier)))
     (operator
       (eq))
-    (literal
-      (string
-        (string_content)))))
+    (string
+      (string_content))))
 
 ===================================
 context equal to number (delimited)
@@ -30,8 +29,7 @@ if: ${{ context.property == 123 }}
         (identifier)))
     (operator
       (eq))
-    (literal
-      (number))))
+    (number)))
 
 ================
 multiple members
@@ -54,9 +52,8 @@ if: failure() && steps.demo.conclusion == 'failure'
         (identifier)))
     (operator
       (eq))
-    (literal
-      (string
-        (string_content)))))
+    (string
+      (string_content))))
 
 ==================================
 multiple members with not operator
@@ -78,9 +75,8 @@ if: failure() && ! startsWith(github.ref, 'refs/tags/') || steps.demo.conclusion
           (property
             (property_deref)
             (identifier)))
-        (literal
-          (string
-            (string_content)))))
+        (string
+          (string_content))))
     (operator
       (or))
     (context
@@ -93,6 +89,5 @@ if: failure() && ! startsWith(github.ref, 'refs/tags/') || steps.demo.conclusion
         (identifier)))
     (operator
       (ne))
-    (literal
-      (string
-        (string_content)))))
+    (string
+      (string_content))))

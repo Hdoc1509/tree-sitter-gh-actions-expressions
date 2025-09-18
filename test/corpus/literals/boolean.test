@@ -6,8 +6,7 @@ if: true
 
 (source
   (expression
-    (literal
-      (boolean))))
+    (boolean)))
 
 ================
 true (delimited)
@@ -16,8 +15,7 @@ if: ${{ true }}
 ---
 (source
   (delimited_expression
-    (literal
-      (boolean))))
+    (boolean)))
 
 =====
 false
@@ -27,5 +25,4 @@ if: false
 
 (source
   (expression
-    (literal
-      (boolean))))
+    (boolean)))

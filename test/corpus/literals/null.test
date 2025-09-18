@@ -6,8 +6,7 @@ if: null
 
 (source
   (expression
-    (literal
-      (null))))
+    (null)))
 
 ================
 null (delimited)
@@ -16,5 +15,4 @@ if: ${{ null }}
 ---
 (source
   (delimited_expression
-    (literal
-      (null))))
+    (null)))

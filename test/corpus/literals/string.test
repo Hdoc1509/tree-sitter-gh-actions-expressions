@@ -6,8 +6,7 @@ if: ''
 
 (source
   (expression
-    (literal
-      (string))))
+    (string)))
 
 ==================
 emplty (delimited)
@@ -16,8 +15,7 @@ if: ${{ '' }}
 ---
 (source
   (delimited_expression
-    (literal
-      (string))))
+    (string)))
 
 ======
 normal
@@ -27,9 +25,8 @@ if: 'Example string'
 
 (source
   (expression
-    (literal
-      (string
-        (string_content)))))
+    (string
+      (string_content))))
 ===========
 quote scape
 ===========
@@ -38,8 +35,7 @@ if: 'It''s open source!'
 
 (source
   (expression
-    (literal
-      (string
-        (string_content)
-        (scape_sequence)
-        (string_content)))))
+    (string
+      (string_content)
+      (scape_sequence)
+      (string_content))))

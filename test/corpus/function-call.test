@@ -41,9 +41,8 @@ if: fromJSON('{"key":"value"}')
     (function_call
       function: (identifier)
       arguments: (arguments
-        (literal
-          (string
-            (string_content)))))))
+        (string
+          (string_content))))))
 
 ===================
 multiple parameters
@@ -72,9 +71,8 @@ if: contains(github.event.issue.labels.*.name, 'bug')
           (property
             (property_deref)
             (identifier)))
-        (literal
-          (string
-            (string_content)))))))
+        (string
+          (string_content))))))
 
 ===============
 format() string
@@ -97,12 +95,9 @@ if: format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat')
             (format_index))
           (string_content)
           (scape_sequence))
-        (literal
-          (string
-            (string_content)))
-        (literal
-          (string
-            (string_content)))
-        (literal
-          (string
-            (string_content)))))))
+        (string
+          (string_content))
+        (string
+          (string_content))
+        (string
+          (string_content))))))

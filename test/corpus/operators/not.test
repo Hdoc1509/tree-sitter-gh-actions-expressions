@@ -14,9 +14,8 @@ if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
           (property
             (property_deref)
             (identifier)))
-        (literal
-          (string
-            (string_content)))))))
+        (string
+          (string_content))))))
 
 =======================
 error without delimiter
