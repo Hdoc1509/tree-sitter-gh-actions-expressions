@@ -75,3 +75,34 @@ if: contains(github.event.issue.labels.*.name, 'bug')
         (literal
           (string
             (string_content)))))))
+
+===============
+format() string
+===============
+if: format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat')
+---
+(source
+  (expression
+    (function_call
+      function: (identifier)
+      arguments: (arguments
+        (format_string
+          (scape_sequence)
+          (string_content)
+          (format_variable
+            (format_index))
+          (format_variable
+            (format_index))
+          (format_variable
+            (format_index))
+          (string_content)
+          (scape_sequence))
+        (literal
+          (string
+            (string_content)))
+        (literal
+          (string
+            (string_content)))
+        (literal
+          (string
+            (string_content)))))))
