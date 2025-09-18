@@ -1,4 +1,4 @@
-breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.md
+breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.tmpl.md
 
 trigger_release() {
   if ! npx changeset version; then
