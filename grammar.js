@@ -61,8 +61,22 @@ module.exports = grammar({
       seq("'", repeat(choice($.string_content, $.scape_sequence)), "'"),
     string_content: (_) => token(prec(-1, /([^'\\\r\n]|\\(.|\r?\n))+/)),
     scape_sequence: () => token.immediate("''"),
-    // TODO: scape braces and value's placeholder:
-    // format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat')
+    format_string: ($) =>
+      seq(
+        "'",
+        repeat(
+          choice(
+            $.format_variable,
+            alias($._format_scape, $.scape_sequence),
+            alias($._format_content, $.string_content)
+          )
+        ),
+        "'"
+      ),
+    _format_scape: () => token.immediate(choice("''", "{{", "}}")),
+    _format_content: () => token(prec(-1, /([^'{}\\\r\n]|\\(.|\r?\n))+/)),
+    format_variable: ($) => seq("{", $.format_index, "}"),
+    format_index: ($) => $._int,
 
     asterisk: () => "*",
     identifier: () => /[_a-zA-Z][-_a-zA-Z0-9]+/,
@@ -73,7 +87,8 @@ module.exports = grammar({
       choice(seq($.property_deref, choice($.identifier, $.asterisk)), $.index),
     index: ($) => seq("[", choice($.number, $.string), "]"),
 
-    function_call: ($) =>
+    function_call: ($) => choice($._format_function, $._function),
+    _function: ($) =>
       seq(
         field("function", $.identifier),
         "(",
@@ -81,6 +96,15 @@ module.exports = grammar({
         ")"
       ),
     arguments: ($) => seq($._evaluation, repeat(seq(",", $._evaluation))),
+    _format_function: ($) =>
+      seq(
+        field("function", alias("format", $.identifier)),
+        "(",
+        field("arguments", optional(alias($._format_arguments, $.arguments))),
+        ")"
+      ),
+    _format_arguments: ($) =>
+      seq($.format_string, repeat(seq(",", $._evaluation))),
 
     not: () => "!",
     operator: ($) => choice($.lt, $.le, $.gt, $.ge, $.eq, $.ne, $.and, $.or),
