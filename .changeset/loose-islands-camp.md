@@ -1,5 +1,5 @@
 ---
-"tree-sitter-gh-actions-expressions": minor
+"tree-sitter-gh-actions-expressions": patch
 ---
 
 Update generated files
