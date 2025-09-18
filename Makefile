@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-gh-actions-expressions
 HOMEPAGE_URL := https://github.com/hdoc1509/tree-sitter-gh-actions-expressions
-VERSION := 0.1.2
+VERSION := 0.2.0
 
 # repository
 SRC_DIR := src

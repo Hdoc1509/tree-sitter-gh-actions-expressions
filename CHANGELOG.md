@@ -1,5 +1,11 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.2.0
+
+### Minor Changes
+
+- Include queries for `python` and `rust` bindings ([`f4197dd`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/f4197dd9859cac994e58a3dd1a6101c8345c7da0))
+
 ## 0.1.2
 
 ### Patch Changes
