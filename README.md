@@ -42,7 +42,7 @@
      install_info = {
        url = 'https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions',
        files = { "src/parser.c" },
-       revision = 'release',
+       branch = 'release',
        -- if ABI version from neovim doesn't match the one from this grammar
        -- requires Node.js and tree-sitter cli to be installed
        requires_generate_from_grammar = true,
