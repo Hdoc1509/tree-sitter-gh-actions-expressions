@@ -25,7 +25,7 @@ module.exports = grammar({
       seq("if", ":", choice($.delimited_expression, $.expression)),
 
     _evaluation: ($) =>
-      choice($.literal, $.context, $.function_call, $.logical_group),
+      choice($._literal, $.context, $.function_call, $.logical_group),
 
     expression: ($) =>
       seq(
@@ -43,7 +43,7 @@ module.exports = grammar({
         "}}"
       ),
 
-    literal: ($) => choice($.boolean, $.null, $.number, $.string),
+    _literal: ($) => choice($.boolean, $.null, $.number, $.string),
 
     boolean: () => choice("true", "false"),
 
