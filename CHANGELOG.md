@@ -1,5 +1,11 @@
 # gh-actions-expressions
 
+## 0.1.2
+
+### Patch Changes
+
+- Include grammar.js in release branch ([`77e7dc1`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/77e7dc1604ed388f3679da7290f181835738dd29))
+
 ## 0.1.1
 
 ### Patch Changes
