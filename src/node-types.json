@@ -8,7 +8,15 @@
       "required": true,
       "types": [
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "context",
+          "named": true
+        },
+        {
+          "type": "format_string",
           "named": true
         },
         {
@@ -16,11 +24,19 @@
           "named": true
         },
         {
-          "type": "literal",
+          "type": "logical_group",
           "named": true
         },
         {
-          "type": "logical_group",
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -59,15 +75,15 @@
       "required": true,
       "types": [
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
         {
           "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "literal",
           "named": true
         },
         {
@@ -79,7 +95,19 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "operator",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -94,15 +122,15 @@
       "required": true,
       "types": [
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
         {
           "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "literal",
           "named": true
         },
         {
@@ -114,7 +142,62 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "operator",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "format_index",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "format_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "format_variable",
+          "named": true
+        },
+        {
+          "type": "scape_sequence",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "format_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "format_index",
           "named": true
         }
       ]
@@ -166,33 +249,6 @@
     }
   },
   {
-    "type": "literal",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "logical_group",
     "named": true,
     "fields": {},
@@ -201,15 +257,15 @@
       "required": true,
       "types": [
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
         {
           "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "literal",
           "named": true
         },
         {
@@ -221,7 +277,19 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "operator",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -460,6 +528,14 @@
   },
   {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   },
   {
