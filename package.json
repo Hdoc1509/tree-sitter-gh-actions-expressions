@@ -1,5 +1,5 @@
 {
-  "name": "gh-actions-expressions",
+  "name": "tree-sitter-gh-actions-expressions",
   "version": "0.1.0",
   "description": "Github Actions expressions grammar for tree-sitter",
   "repository": "https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions",
