@@ -1,5 +1,15 @@
 # gh-actions-expressions
 
+## 0.1.1
+
+### Patch Changes
+
+- Set correct package name in package.json ([`eac930a`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/eac930a53699d2fd4f2b3183c6459572039859a6))
+
+- Update generated files ([`2496b7d`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/2496b7d4f60cd4d9fc04f31703ccee94fe9c3d6b))
+
+- Update keywords ([`3bdfffa`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/3bdfffaa1ec0e7229d3a681e2e742a4afda5d0ce))
+
 ## 0.1.0
 
 ### Initial release
