@@ -45,6 +45,8 @@ update_package_files_version() {
   echo && info_log "Updating package files version..."
 
   npx tree-sitter version "$new_version"
+  # NOTE: needed to update version in src/parser.c
+  npx tree-sitter generate
 
   success_log "Package files version updated!"
   echo && warn_log "Don't forget to commit the changes!"
