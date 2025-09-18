@@ -34,6 +34,8 @@ add_breaking_changes_message() {
   sed -i "s/{{ version_npm }}/$version_npm/" "$CHANGELOG_FILE"
   sed -i "s/{{ version_cargo }}/$version_cargo/" "$CHANGELOG_FILE"
   sed -i "s/{{ version_pypi }}/$version_pypi/" "$CHANGELOG_FILE"
+  sed -i "s/  \(Migrating\)/  #### \1/" "$CHANGELOG_FILE"
+  sed -i "s/  \(Why\)/  #### \1/" "$CHANGELOG_FILE"
 
   success_log "Breaking changes message generated!"
 }
