@@ -1,5 +1,11 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.3.1
+
+### Patch Changes
+
+- Add missing highlight captures for `format()` function ([`891cc85`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/891cc85ecae4cbc2b09a7d4530258c6af22279e3))
+
 ## 0.3.0
 
 **_This release contains backwards-incompatible changes._** To avoid picking up
