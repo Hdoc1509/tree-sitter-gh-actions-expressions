@@ -1,5 +1,39 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.3.0
+
+**_This release contains backwards-incompatible changes._** To avoid picking up
+releases like this, you should set the exact version or use a version range
+syntax that only accepts `patch` upgrades, i.e.:
+
+- `~0.2.0` in your `package.json`. See `npm` documentation about
+  [semver](https://docs.npmjs.com/cli/v6/using-npm/semver/) for more
+  information.
+- `~0.2.0` in your `Cargo.toml`. See `cargo` documentation about
+  [version requirement syntax](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#version-requirement-syntax)
+  for more information.
+- `~=0.2.0` in your `pyproject.toml`. See `python` documentation
+  about [version specifiers](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
+  for more information.
+
+### Minor Changes
+
+- Set `literal` as a hidden one. ([`c5eea4a`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/c5eea4ad821260387f4bb94100458129212cf062))
+
+  #### Migrating
+
+  ```diff
+  - (literal (string (string_content)))
+  + (string (string_content))
+  ```
+
+  #### Why?
+
+  - Reduces complexity of queries
+  - Cleaner AST
+
+- Add new nodes for `format()` function ([`98aa773`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/98aa773760a22221a1049f89fe19c60b2329d40b))
+
 ## 0.2.0
 
 ### Minor Changes
