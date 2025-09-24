@@ -1,5 +1,11 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.3.2
+
+### Patch Changes
+
+- Add missing injection example ([`aa439a0`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/aa439a06b7f2d267484f1043aacbfa0b6846729e))
+
 ## 0.3.1
 
 ### Patch Changes
