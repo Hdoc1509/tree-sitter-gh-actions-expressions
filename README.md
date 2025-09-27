@@ -178,8 +178,8 @@ jobs:
 ## Thanks
 
 Thanks to [@disrupted](https://github.com/disrupted) for creating
-[tree-sitter-github-actions grammar](https://github.com/disrupted/tree-sitter-github-actions),
-which is the base I used to create this grammar.
+[tree-sitter-github-actions grammar][ts-github-actions], which is the base I
+used to create this grammar.
 
 [ci]: https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/actions/workflows/ci.yml/badge.svg
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
@@ -191,4 +191,5 @@ which is the base I used to create this grammar.
 [gh-run-steps-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/metadata-syntax#runsstepsif
 [gh-jobs-jobid-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idif
 [gh-actions-context-docs]: https://docs.github.com/en/actions/reference/workflows-and-actions/contexts
+[ts-github-actions]: https://github.com/disrupted/tree-sitter-github-actions
 [release-branch]: https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/tree/release
