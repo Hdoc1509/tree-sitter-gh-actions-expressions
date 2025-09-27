@@ -10,6 +10,9 @@
 [Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
 [Github Actions expressions][gh-actions-expressions-docs]
 
+> [!IMPORTANT]
+> ABI version: `15`
+
 ## Parser requirements
 
 - [`gitignore`](https://github.com/shunsambongi/tree-sitter-gitignore)
