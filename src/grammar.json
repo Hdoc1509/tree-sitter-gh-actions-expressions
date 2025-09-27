@@ -36,8 +36,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "_ignored_text"
+                "type": "PATTERN",
+                "value": "[^$]"
               },
               {
                 "type": "SYMBOL",
@@ -47,10 +47,6 @@
           }
         }
       ]
-    },
-    "_ignored_text": {
-      "type": "PATTERN",
-      "value": "[^$]+"
     },
     "_if_pair": {
       "type": "SEQ",

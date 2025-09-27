@@ -22,7 +22,7 @@
 enum ts_symbol_identifiers {
   aux_sym__pair_token1 = 1,
   anon_sym_COLON = 2,
-  sym__ignored_text = 3,
+  aux_sym__pair_token2 = 3,
   anon_sym_if = 4,
   anon_sym_run = 5,
   sym__ignored_bash = 6,
@@ -103,7 +103,7 @@ static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [aux_sym__pair_token1] = "_pair_token1",
   [anon_sym_COLON] = ":",
-  [sym__ignored_text] = "_ignored_text",
+  [aux_sym__pair_token2] = "_pair_token2",
   [anon_sym_if] = "if",
   [anon_sym_run] = "run",
   [sym__ignored_bash] = "_ignored_bash",
@@ -184,7 +184,7 @@ static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [aux_sym__pair_token1] = aux_sym__pair_token1,
   [anon_sym_COLON] = anon_sym_COLON,
-  [sym__ignored_text] = sym__ignored_text,
+  [aux_sym__pair_token2] = aux_sym__pair_token2,
   [anon_sym_if] = anon_sym_if,
   [anon_sym_run] = anon_sym_run,
   [sym__ignored_bash] = sym__ignored_bash,
@@ -274,9 +274,9 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [sym__ignored_text] = {
+  [aux_sym__pair_token2] = {
     .visible = false,
-    .named = true,
+    .named = false,
   },
   [anon_sym_if] = {
     .visible = true,
@@ -1054,8 +1054,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (eof) ADVANCE(46);
       if (lookahead == '$') ADVANCE(34);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(52);
-      if (lookahead != 0) ADVANCE(53);
+          lookahead == ' ') ADVANCE(53);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 45:
       if (eof) ADVANCE(46);
@@ -1106,16 +1106,14 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_COLON);
       END_STATE();
     case 52:
-      ACCEPT_TOKEN(sym__ignored_text);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(52);
-      if (lookahead != 0 &&
-          lookahead != '$') ADVANCE(53);
+      ACCEPT_TOKEN(aux_sym__pair_token2);
       END_STATE();
     case 53:
-      ACCEPT_TOKEN(sym__ignored_text);
+      ACCEPT_TOKEN(aux_sym__pair_token2);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(53);
       if (lookahead != 0 &&
-          lookahead != '$') ADVANCE(53);
+          lookahead != '$') ADVANCE(52);
       END_STATE();
     case 54:
       ACCEPT_TOKEN(anon_sym_if);
@@ -3033,7 +3031,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(244), 1,
       ts_builtin_sym_end,
     ACTIONS(246), 1,
-      sym__ignored_text,
+      aux_sym__pair_token2,
     ACTIONS(248), 1,
       anon_sym_DOLLAR_LBRACE_LBRACE,
     STATE(71), 2,
@@ -3063,7 +3061,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(264), 1,
       ts_builtin_sym_end,
     ACTIONS(266), 1,
-      sym__ignored_text,
+      aux_sym__pair_token2,
     ACTIONS(269), 1,
       anon_sym_DOLLAR_LBRACE_LBRACE,
     STATE(71), 2,
@@ -3089,7 +3087,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(248), 1,
       anon_sym_DOLLAR_LBRACE_LBRACE,
     ACTIONS(282), 1,
-      sym__ignored_text,
+      aux_sym__pair_token2,
     STATE(68), 2,
       sym_delimited_expression,
       aux_sym__pair_repeat1,
@@ -3133,7 +3131,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_DOLLAR_LBRACE_LBRACE,
     ACTIONS(304), 2,
       ts_builtin_sym_end,
-      sym__ignored_text,
+      aux_sym__pair_token2,
   [1919] = 3,
     ACTIONS(308), 1,
       anon_sym_RPAREN,
@@ -3146,13 +3144,13 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_DOLLAR_LBRACE_LBRACE,
     ACTIONS(312), 2,
       ts_builtin_sym_end,
-      sym__ignored_text,
+      aux_sym__pair_token2,
   [1937] = 2,
     ACTIONS(318), 1,
       anon_sym_DOLLAR_LBRACE_LBRACE,
     ACTIONS(316), 2,
       ts_builtin_sym_end,
-      sym__ignored_text,
+      aux_sym__pair_token2,
   [1945] = 3,
     ACTIONS(310), 1,
       anon_sym_COMMA,

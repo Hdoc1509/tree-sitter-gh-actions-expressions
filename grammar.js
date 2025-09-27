@@ -13,16 +13,8 @@ module.exports = grammar({
   rules: {
     source: ($) => choice($._if_pair, $._run_pair, $._pair),
 
-    // TODO: remove _ignored_text node
-
     _pair: ($) =>
-      seq(
-        /[\w-]+/,
-        ":",
-        repeat1(choice($._ignored_text, $.delimited_expression))
-      ),
-    // TODO: remove `+` quantifier
-    _ignored_text: () => /[^$]+/,
+      seq(/[\w-]+/, ":", repeat1(choice(/[^$]/, $.delimited_expression))),
 
     _if_pair: ($) =>
       seq("if", ":", choice($.delimited_expression, $.expression)),
