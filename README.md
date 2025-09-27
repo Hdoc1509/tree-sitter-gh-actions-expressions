@@ -87,8 +87,6 @@
          ])
      ]
      (#lua-match? @_value "${{")) @injection.content
-     ; NOTE: to avoid weird behaviours with `bash` injections
-     (#not-eq? @_key "run")
      (#set! injection.language "gh_actions_expressions")
      (#set! injection.include-children))
 
