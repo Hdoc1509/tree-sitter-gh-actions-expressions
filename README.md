@@ -146,7 +146,7 @@ jobs:
 
 ![AST error within variable expansion](https://github.com/user-attachments/assets/b06c0272-d127-4911-8f19-4d076baf34bf)
 
-Due to variable expansion is done by using `$` prefix, the `${{` and `}}` nodes
+Because variable expansion is done by using `$` prefix, the `${{` and `}}` nodes
 will cause an AST error. To avoid this declare an auxiliary bash variable or an
 environment variable:
 
