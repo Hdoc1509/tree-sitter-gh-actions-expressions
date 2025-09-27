@@ -118,6 +118,52 @@ have specific instructions for your editor, PR's are welcome.
 
 WIP
 
+## Troubleshooting
+
+### AST errors within `bash` injections when using `run` key
+
+![AST error within bash injection](https://github.com/user-attachments/assets/90c6119e-e6d7-4ab0-975b-25cba0c25143)
+
+To avoid these errors, is recommended to surround the `expression` within a
+`raw_string` node, string with single quotes `'`, i.e.:
+
+```yaml
+jobs:
+  dry-run:
+    name: dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - name: dry-run
+        run: ./script.sh '${{ inputs.mode }}' --dry-run
+```
+
+![Correct bash AST by using raw_string](https://github.com/user-attachments/assets/a9335740-afba-4a1a-97c4-b4b66d770da2)
+
+#### What if I need it within a variable expansion?
+
+![AST error within variable expansion](https://github.com/user-attachments/assets/b06c0272-d127-4911-8f19-4d076baf34bf)
+
+Due to variable expansion is done by using `$` prefix, the `${{` and `}}` nodes
+will cause an AST error. To avoid this declare an auxiliary bash variable or an
+environment variable:
+
+```yaml
+jobs:
+  dry-run:
+    name: dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - name: dry-run
+        run: |
+          auxiliary_var='${{ inputs.mode }}'
+          ./script.sh "$MY_VAR and $MODE" --dry-run
+          ./script.sh "$MY_VAR and $auxiliary_var" --dry-run
+        env:
+          MODE: ${{ inputs.mode }}
+```
+
+![Correct bash AST by using auxiliary variables](https://github.com/user-attachments/assets/435fd4d1-a430-4e56-96a4-76181624325a)
+
 ## References
 
 - [Github Actions expressions documentation][gh-actions-expressions-docs]
