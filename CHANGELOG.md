@@ -1,5 +1,11 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.4.1
+
+### Patch Changes
+
+- Add link to `gh-actions.nvim` plugin ([`b58f6dc`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/b58f6dcb2efad07d5e3768d0eefb04caadd77f04))
+
 ## 0.4.0
 
 ### Minor Changes
