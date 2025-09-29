@@ -519,6 +519,10 @@
     "named": true
   },
   {
+    "type": "run",
+    "named": false
+  },
+  {
     "type": "scape_sequence",
     "named": true
   },

@@ -11,18 +11,17 @@ module.exports = grammar({
   name: "gh_actions_expressions",
 
   rules: {
-    source: ($) => choice($._if_pair, $._pair),
+    source: ($) => choice($._if_pair, $._run_pair, $._pair),
 
     _pair: ($) =>
-      seq(
-        /[\w-]+/,
-        ":",
-        repeat1(choice($._ignored_text, $.delimited_expression))
-      ),
-    _ignored_text: () => /[^$]+/,
+      seq(/[\w-]+/, ":", repeat1(choice(/[^$]/, $.delimited_expression))),
 
     _if_pair: ($) =>
       seq("if", ":", choice($.delimited_expression, $.expression)),
+
+    _run_pair: ($) =>
+      seq("run", ":", repeat1(choice($._ignored_bash, $.delimited_expression))),
+    _ignored_bash: () => token(choice(/[^$]/, /\$[^{]/, /\$\{[^{]/)),
 
     _evaluation: ($) =>
       choice($._literal, $.context, $.function_call, $.logical_group),
