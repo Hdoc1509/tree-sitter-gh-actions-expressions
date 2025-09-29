@@ -27,8 +27,8 @@
 
 ### Neovim
 
-- `gh-actions.nvim`: plugin that integrates this grammar to your `Neovim`
-  configuration
+- [`gh-actions.nvim`](https://github.com/Hdoc1509/gh-actions.nvim): plugin that
+  integrates this grammar to your `Neovim` configuration
 
 ### Helix
 
