@@ -20,89 +20,15 @@
 - [`json`](https://github.com/tree-sitter/tree-sitter-json) (optional): for
   `fromJSON()` function
 - [`yaml`](https://github.com/tree-sitter/tree-sitter-yaml): injection to its
-  `block_mapping_pair` node
+  `block_mapping_pair` node. Check the [`yaml`
+  injection](#injection-for-yaml-parser) section for more information
 
 ## Usage in Editors
 
 ### Neovim
 
-#### Requirements
-
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [Node.js](https://nodejs.org/en/download) (if ABI not compatible)
-- [tree-sitter cli](https://github.com/tree-sitter/tree-sitter/tree/master/crates/cli)
-  (if ABI not compatible)
-
-#### Installation
-
-1. Add the following to your `nvim-treesitter` configuration:
-
-   ```lua
-   local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-   -- NOTE: add the parser to `parser_config` before calling `setup()`
-   parser_config.gh_actions_expressions = {
-     install_info = {
-       url = 'https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions',
-       files = { "src/parser.c" },
-       branch = 'release',
-       -- if ABI version from neovim doesn't match the one from this grammar
-       -- requires Node.js and tree-sitter cli to be installed
-       requires_generate_from_grammar = true,
-     },
-   }
-
-   require('nvim-treesitter.configs').setup({
-     ensure_installed = {
-       -- other parsers
-       'gh_actions_expressions',
-     },
-     -- other options
-   })
-   ```
-
-2. Copy the queries from [`queries`](./queries) directory to
-   `queries/gh_actions_expression` directory in your `neovim` configuration
-   directory:
-
-   | With                  | Path                    |
-   | --------------------- | ----------------------- |
-   | Unix                  | `~/.config/nvim`        |
-   | Windows               | `~/AppData/Local/nvim`  |
-   | `XDG_CONFIG_HOME` set | `$XDG_CONFIG_HOME/nvim` |
-
-3. Add the following queries to `after/queries/yaml/injections.scm` in your
-   `neovim` configuration directory:
-
-   ```query
-   ; extends
-   ; don't forget to include `extends` modeline!
-   ((block_mapping_pair
-     key: (flow_node) @_key
-     value: [
-       (block_node
-         (block_scalar) @_value)
-       (flow_node
-         [
-           (plain_scalar
-             (string_scalar) @_value)
-           (double_quote_scalar) @_value
-         ])
-     ]
-     (#lua-match? @_value "${{")) @injection.content
-     (#set! injection.language "gh_actions_expressions")
-     (#set! injection.include-children))
-
-   ((block_mapping_pair
-     key: (flow_node) @_key
-     (#eq? @_key "if")
-     value: (flow_node
-       (plain_scalar
-         (string_scalar) @_value)
-       (#not-lua-match? @_value "${{"))) @injection.content
-     (#set! injection.language "gh_actions_expressions")
-     (#set! injection.include-children))
-   ```
+- `gh-actions.nvim`: plugin that integrates this grammar to your `Neovim`
+  configuration
 
 ### Helix
 
@@ -117,9 +43,57 @@ WIP
 You can get the built files from the [`release` branch][release-branch]. If you
 have specific instructions for your editor, PR's are welcome.
 
+## Injection for `yaml` parser
+
+Use the following query:
+
+```query
+((block_mapping_pair
+  key: (flow_node) @_key
+  value: [
+    (block_node
+      (block_scalar) @_value)
+    (flow_node
+      [
+        (plain_scalar
+          (string_scalar) @_value)
+        (double_quote_scalar) @_value
+      ])
+  ]
+  (#lua-match? @_value "${{")) @injection.content
+  (#is-gh-actions-file? "") ; NOTE: NEW PREDICATE
+  (#set! injection.language "gh_actions_expressions")
+  (#set! injection.include-children))
+
+((block_mapping_pair
+  key: (flow_node) @_key
+  (#eq? @_key "if")
+  value: (flow_node
+    (plain_scalar
+      (string_scalar) @_value)
+    (#not-lua-match? @_value "${{"))) @injection.content
+  (#is-gh-actions-file? "") ; NOTE: NEW PREDICATE
+  (#set! injection.language "gh_actions_expressions")
+  (#set! injection.include-children))
+```
+
+### `is-gh-actions-file` predicate
+
+To avoid injecting this grammar to files other than github actions, is
+recommended to create a predicate named `is-gh-actions-file`.
+
+> [!NOTE]
+> The creation of this directive varies for each editor
+
+This predicate will be the responsible to allow injection to files that matches
+the name pattern `.github/workflows/*.ya?ml`.
+
 ## Implementations
 
-WIP
+### gh-actions.nvim
+
+- [Parser register and new predicate][gh-actions-nvim-tree-sitter]
+- [Yaml injection][gh-actions-nvim-yaml-injection]
 
 ## Troubleshooting
 
@@ -192,4 +166,6 @@ used to create this grammar.
 [gh-jobs-jobid-if]: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idif
 [gh-actions-context-docs]: https://docs.github.com/en/actions/reference/workflows-and-actions/contexts
 [ts-github-actions]: https://github.com/disrupted/tree-sitter-github-actions
+[gh-actions-nvim-tree-sitter]: https://github.com/Hdoc1509/gh-actions.nvim/blob/master/lua/gh-actions/tree-sitter.lua
+[gh-actions-nvim-yaml-injection]: https://github.com/Hdoc1509/gh-actions.nvim/blob/master/queries/yaml/injections.scm
 [release-branch]: https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/tree/release
