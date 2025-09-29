@@ -1,5 +1,15 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.4.0
+
+### Minor Changes
+
+- Ignore bash syntax ([`0026dfe`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/0026dfef1ee1074b6bb1558f41d38af7d5fb6874))
+
+### Patch Changes
+
+- Use `punctuation.special` capture for `format_variable` brackets ([`7b65223`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/7b652238043dc9c875fe0bc0377c9b4777fb257e))
+
 ## 0.3.2
 
 ### Patch Changes
