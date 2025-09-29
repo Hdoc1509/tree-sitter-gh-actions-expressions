@@ -1,5 +1,17 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.5.0
+
+### Minor Changes
+
+- Only highlight valid function identifiers ([`c13fba8`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/c13fba8a477ca110f719bb28ef092d9a3849e63e))
+
+### Patch Changes
+
+- Use `variable.builtin` capture for context identifiers ([`311fb1e`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/311fb1e8c33857f20cfb81a402f014c7dca3c4c5))
+
+- Use `function.builtin` capture for function identifiers ([`02b2a09`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/02b2a09298ad3204ea51a5603aaf021d2f08a0a5))
+
 ## 0.4.1
 
 ### Patch Changes
