@@ -37,7 +37,10 @@
 (index) @punctuation.delimiter
 
 (function_call
-  function: (identifier) @function)
+  function: (identifier) @function
+  (#any-of? @function
+    "contains" "startsWith" "endsWith" "format" "join" "toJSON" "fromJSON" "hashFiles" "success"
+    "always" "cancelled" "failure"))
 
 (function_call
   [
