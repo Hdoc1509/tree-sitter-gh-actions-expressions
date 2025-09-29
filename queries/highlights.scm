@@ -21,8 +21,8 @@
 (scape_sequence) @string.escape
 
 (context
-  (identifier) @function.builtin
-  (#any-of? @function.builtin
+  (identifier) @variable.builtin
+  (#any-of? @variable.builtin
     "github" "env" "vars" "job" "jobs" "steps" "runner" "secrets" "strategy" "matrix" "needs"
     "inputs"))
 
