@@ -21,8 +21,8 @@
 (scape_sequence) @string.escape
 
 (context
-  (identifier) @function.builtin
-  (#any-of? @function.builtin
+  (identifier) @variable.builtin
+  (#any-of? @variable.builtin
     "github" "env" "vars" "job" "jobs" "steps" "runner" "secrets" "strategy" "matrix" "needs"
     "inputs"))
 
@@ -37,7 +37,10 @@
 (index) @punctuation.delimiter
 
 (function_call
-  function: (identifier) @function)
+  function: (identifier) @function.builtin
+  (#any-of? @function.builtin
+    "contains" "startsWith" "endsWith" "format" "join" "toJSON" "fromJSON" "hashFiles" "success"
+    "always" "cancelled" "failure"))
 
 (function_call
   [
