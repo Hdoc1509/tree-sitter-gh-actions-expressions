@@ -60,7 +60,7 @@ Use the following query:
         (double_quote_scalar) @_value
       ])
   ]
-  (#lua-match? @_value "${{")) @injection.content
+  (#match? @_value "${{")) @injection.content
   (#is-gh-actions-file? "") ; NOTE: NEW PREDICATE
   (#set! injection.language "gh_actions_expressions")
   (#set! injection.include-children))
@@ -71,7 +71,7 @@ Use the following query:
   value: (flow_node
     (plain_scalar
       (string_scalar) @_value)
-    (#not-lua-match? @_value "${{"))) @injection.content
+    (#not-match? @_value "${{"))) @injection.content
   (#is-gh-actions-file? "") ; NOTE: NEW PREDICATE
   (#set! injection.language "gh_actions_expressions")
   (#set! injection.include-children))
