@@ -1,5 +1,11 @@
 # tree-sitter-gh-actions-expressions
 
+## 0.5.1
+
+### Patch Changes
+
+- Use `match?` predicate in example query for `yaml` injection ([`1f83b0d`](https://github.com/Hdoc1509/tree-sitter-gh-actions-expressions/commit/1f83b0d1722a711ba22966923e8fa2866ffc5b0c))
+
 ## 0.5.0
 
 ### Minor Changes
